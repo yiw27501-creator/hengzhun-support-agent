@@ -1,0 +1,270 @@
+{
+  "attribution": {
+    "provider": "Bitext Innovations",
+    "source": "https://github.com/bitext/customer-support-llm-chatbot-training-dataset/tree/337b96868e02b40a05f9c0df3290c65a15ea573e",
+    "revision": "337b96868e02b40a05f9c0df3290c65a15ea573e",
+    "license": "CDLA-Sharing-1.0",
+    "license_url": "https://cdla.dev/sharing-1-0/",
+    "modified": true,
+    "changes": "Questions only; contact-pattern quarantine; normalized exact dedup; hash split; FAQ draft grouping. Upstream responses excluded.",
+    "nature": "English hybrid synthetic; not real merchant conversations",
+    "raw_sha256": "079b0cec48d34c319c9877b6d178390bf7187a7f7a604958e0ed5a096bba5af6",
+    "downloaded_at": "2026-09-15T13:14:42.373428+00:00",
+    "input_rows": 4514,
+    "kept": 4070,
+    "duplicates": 68,
+    "quarantined": 376,
+    "splits": {
+      "dev": 3251,
+      "test": 819
+    },
+    "intents": {
+      "cancel_order": 24,
+      "change_order": 35,
+      "change_shipping_address": 137,
+      "check_cancellation_fee": 167,
+      "check_invoice": 194,
+      "check_payment_methods": 166,
+      "check_refund_policy": 148,
+      "complaint": 156,
+      "contact_customer_service": 154,
+      "contact_human_agent": 161,
+      "create_account": 186,
+      "delete_account": 159,
+      "delivery_options": 182,
+      "delivery_period": 204,
+      "edit_account": 186,
+      "get_invoice": 157,
+      "get_refund": 188,
+      "newsletter_subscription": 142,
+      "payment_issue": 153,
+      "place_order": 158,
+      "recover_password": 157,
+      "registration_problems": 146,
+      "review": 174,
+      "set_up_shipping_address": 140,
+      "switch_account": 174,
+      "track_order": 52,
+      "track_refund": 170
+    },
+    "limitations": "Hash split does not prevent near-duplicate or template-family leakage. Not an independent business benchmark."
+  },
+  "items": [
+    {
+      "intent": "cancel_order",
+      "question": "problems with cancelling purchase 00123842",
+      "answer": "处理此问题前需要核对：订单状态、取消条件、明确取消确认。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"022e63564da27d1cfd8c2341820e9e3b8210f478795391fd2233b58af90fad7d\", \"problems with cancelling purchase 00123842\"], [\"1753eacadccd63ebd10c95f69fe8994f721b426671191a7a5a1fbb7f963c13b7\", \"where can I cancel purchase 00123842?\"], [\"1d66ed3355e74501e1a21aa4a6adc626d1df8af29cdb2a9772127755fc0aa9d8\", \"assistance to cancel order 00123842\"], [\"27e5fa0b89851c6ba2fae4b533ab766faf3d56fa503b68e52809bd866be410f0\", \"want help casnceling purchase 00123842\"], [\"3ef4e9b4d78b16897dd22efae29be5518e9e6fdd04355f06604d45668887b346\", \"canceling order\"]]",
+      "source_count": 24
+    },
+    {
+      "intent": "change_order",
+      "question": "I want help to edit order 00123842",
+      "answer": "处理此问题前需要核对：订单号、修改内容、履约状态。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"0bba53c1634f1efc14c8d2be23c825cff3fafffc351e1b89b1fbdd60c38ba00d\", \"I want help to edit order 00123842\"], [\"0e48b8922f7e224138e38e2338e2a478c829c42459a3a6e7e2265d800c8b9f8e\", \"I want assistance to delete something from purchase 00123842\"], [\"1c277d07d54ba9a3a772904801c646c83aec59d1d64eff3c5a32f6a40ac64d74\", \"help to switch some items of purchase 00123842\"], [\"2719baf1a8e71a704f1c195156d9514e5ba2b6dd81b4959ba72ed14a482a48f7\", \"I missed some items in purchase 00123842, can I add them?\"], [\"38342a56effd5a055714b54994a773a422ce307ec9d7abd51f0efb61c36f6b0e\", \"I need to swap something of purchase 00123842, how to do it?\"]]",
+      "source_count": 35
+    },
+    {
+      "intent": "change_shipping_address",
+      "question": "I have an trouble changing the address",
+      "answer": "处理此问题前需要核对：订单履约状态、通过安全表单提交的新地址。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"01aef3aed5011603b3e6a365bc78a075cfce36e3bb8f6b7061cdabe8e6c5f09c\", \"I have an trouble changing the address\"], [\"03f38c652e6f862c5c9a790b7e707944d4631bd29006513a8fc911eb2cfac280\", \"help me changing the delivery address\"], [\"057e426deafa0e94d1afd373debaa4d61ac3018d0dd79cebaa8001eb00615fd2\", \"I have a trouble trying to correct the shipping address\"], [\"07a8a2ca1d185d13a0eb81267eb30effb2f10b892f3acd8baa4f4363c6206cad\", \"i want assistance changing the shipping address\"], [\"0826e01a5d4a31ffedba2147fd897cca02e5235ec5e58b10259c3f628782d926\", \"need to change the address\"]]",
+      "source_count": 137
+    },
+    {
+      "intent": "check_cancellation_fee",
+      "question": "I don't know how to  check the early exit charge",
+      "answer": "处理此问题前需要核对：订单状态、适用取消政策。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"0455314cdefb7e27190adc30e7929990fc99eb2a09e76f1fcbc58e9bb430bda6\", \"I don't know how to  check the early exit charge\"], [\"0483593547ea4f3f7ddb53fc2c093f2e3eb31dbc0251deb1681447fa2c2720af\", \"I don't know how I can check the early termination charges\"], [\"052af68a1cd626e0142d3c259c78f8f073ca6effd86d95e4f32958e213bab06b\", \"is it possible to see the early exitpenalties\"], [\"09cb5480fa6e07d8b981c41f6370e286fa7df5920b551c220e13f8cae5023783\", \"is it possible to see the early exit penalties?\"], [\"12c815ed81d6809edc061200717558d2a1bbd62c2c1b94d4e87781cc936e89f1\", \"I have to see the cancellation penalties, I need help\"]]",
+      "source_count": 167
+    },
+    {
+      "intent": "check_invoice",
+      "question": "need help locaing my goddamn invoices from Anna Freeman",
+      "answer": "处理此问题前需要核对：订单号、开票记录。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"00460b8542bfef622e657ce34d8812b479cd389913cbd3ee5b38c3ea3039a887\", \"need help locaing my goddamn invoices from Anna Freeman\"], [\"02439cd47e88bf5b2d8bd9bc369da22d1660c3b983de9eeb59e291c65dda8161\", \"assistance giving a quick look at my bills from Ms. Hawkings\"], [\"04d143f8f0af5d35f988403aa203e9d3f7221f4aa14ca1e59fbf9db5c3598da1\", \"check bill #37777\"], [\"089735a078cf679a1d2c16699d1c9c9dc56d3b8ae48e9fddec83d378c1a90d0f\", \"where to locate my bill from David Miller\"], [\"0946553adb2346f9712d8d05e56f73b73446079bce57f9fca855a6793ce53b66\", \"i need help giving a quick look at my invoice #00108\"]]",
+      "source_count": 194
+    },
+    {
+      "intent": "check_payment_methods",
+      "question": "I'm trying to list the available payment options",
+      "answer": "处理此问题前需要核对：当前结算页支持的支付方式。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"02bc1d5f5d9599c38dc0e5d65423fcc550ad80635543c30b0c5a15027ef83f37\", \"I'm trying to list the available payment options\"], [\"03b0e6b6ecb4fc7276e86aa33d5ac3b8b0db2605ac371c3888135fc07087f3a7\", \"what payment options uaccept\"], [\"047829a4ba53bccc89d5be4dd8283fcae1ad7211af06a802dc7f6551964435bd\", \"i need assistance to check ur allowed payment modalities\"], [\"0515110dd712850e08ada9cc1ac1e1afb243be8b204c9e0008d9a85fa7a10ae0\", \"i need help checking the accepted payment modalities\"], [\"053208c48f68b6b18f494aa5745b1ddadf27feb494dbde80161efc1bc0d51e52\", \"I don't know how I can check your accepted payment methods\"]]",
+      "source_count": 166
+    },
+    {
+      "intent": "check_refund_policy",
+      "question": "I have got to see in what cases can I request refunds",
+      "answer": "本沙箱需先核对身份、支付与风险状态，并确认客户当前退款意愿。符合规则时退款金额等于实付，自动处理上限为20000最小货币单位；超限或条件不明转人工。该限制仅用于合成演练，不代表其他商家政策。",
+      "status": "draft",
+      "examples": "[[\"0485c9b5049df2063b57d8d8369dd771d68e899dc622c6390ce04bdd4737f3eb\", \"I have got to see in what cases can I request refunds\"], [\"05b68d671c2814838c75d315da77f45aa5bb6524060767b666d2e279b70eaf35\", \"I want help to see in which cases can I ask for a refund\"], [\"0f725e01e21e70f28c29637b13c602c86942b507be2dd1e162d2da5a41b3b797\", \"check how long reimbursements usually take\"], [\"12358cbf5dcd1afe79e60268b2c47b058f8df5a26c5732af43b05c6ed1228d8f\", \"I want help to see how long the goddamn refunds take\"], [\"143c1bac649b7b2dbd5e0d694131b959a2c05415f456860b744549020990c9bb\", \"can you show me in what cases can I request reimbursements?\"]]",
+      "source_count": 148
+    },
+    {
+      "intent": "complaint",
+      "question": "want help lodging a customer claim against ur organization",
+      "answer": "处理此问题前需要核对：订单号、投诉事项、期望处理方式。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"00f4ce8fb186e798cf3ed97dd4543ae29b74a7e41484f3d914428c55bbb3a590\", \"want help lodging a customer claim against ur organization\"], [\"028263b06bdb09fced82b6e5aa9c5cd182163883ed20025897a8fcc49d0ca700\", \"file complaint\"], [\"061e547c5970737ec19ac412b3094c384f8076079dfa2137a045c24a7a394294\", \"how to file a complaint against your business?\"], [\"06dd2ab709be49241a54475202897f53b05da22d8c007ab563adcc5f37bb0002\", \"want assistance to lodge a claim against ur organization\"], [\"079cce4a82a77ad694d0dbe142ee66c155aec805fbb01805eaa9a95ce6152d56\", \"need assisxtance to file a reclamation against ur business\"]]",
+      "source_count": 156
+    },
+    {
+      "intent": "contact_customer_service",
+      "question": "how can I check what hours I can call customer service?",
+      "answer": "处理此问题前需要核对：商家已验证的联系渠道。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"014bc20c3e53fc3c393e713b2d9dcd9af64d99c754072046173fc28fec15d059\", \"how can I check what hours I can call customer service?\"], [\"022ede65c0975b23170a2b6310975051de7eed62f7085436fe5df8251fd04ed2\", \"how do i conttact customer service\"], [\"02954f5e3cc2c324bc1f407335b20b9bb71e1cfb14d9fccae86f3126c6cf7e67\", \"can ya help me check what hours i can reach customer sevrice\"], [\"03117b0f80745d3403e368df9a24623beae30262f292b83ba8116069d5e58356\", \"how to check at what time I can call customer service?\"], [\"0328177374d6f142032279caeee76600a27f42ea0325ac05906af6f92dbf7265\", \"i need help speaking with customer service\"]]",
+      "source_count": 154
+    },
+    {
+      "intent": "contact_human_agent",
+      "question": "want assistance to talk to someone",
+      "answer": "处理此问题前需要核对：问题摘要、已尝试步骤。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"01f9375e6e3e67409832aa26588713a1097aa54e74ef1e0fef2fa2c4898c995c\", \"want assistance to talk to someone\"], [\"0229fd717c13edeee29504547f72f40d6c136465969170c528966ffa5f57600e\", \"i do not know what i need to do to speak to a person\"], [\"05308d300740406af966d3116f750f78d8c524f071c8205636ba32a00773d991\", \"i need assistance to talk to an operator\"], [\"0624604139b53bdfac4db61aca27bdd203830ffade61efd85a5ff44cdefd2ae4\", \"want help talkint to a human agent\"], [\"08b4578f5c7153a5bfb9565c7b533565529a7668e50fc082396b3aaed0f55642\", \"you aren't being helpful, I want help talking with someone\"]]",
+      "source_count": 161
+    },
+    {
+      "intent": "create_account",
+      "question": "new Pro account",
+      "answer": "处理此问题前需要核对：注册渠道、报错信息。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"006c3b4bc5c556945b3c5d9ee053806775ee62ae40ff7b2c36fdab785c22879c\", \"new Pro account\"], [\"06044064c0a9c122c21d94d4445a5a35a72aa70baa2061c98ada98575e7fc500\", \"nee assistance with creating my platinum account\"], [\"0a16d5eacad75bc5f080d99cb769c8e68547990581beea6e770b768d43bafe7e\", \"openin premium account for bride\"], [\"0f2f31a3833878ba613b6b117533febdd307533b53b3cf8998fe9b8d64929cc3\", \"opening new Pro account\"], [\"0f51d9dbe02b291511c2938cb55f47bf1c1f5dc34acdb5161e6bf6d342b89f74\", \"enw pro account\"]]",
+      "source_count": 186
+    },
+    {
+      "intent": "delete_account",
+      "question": "problems with platinum account terminations",
+      "answer": "处理此问题前需要核对：账户归属验证、未结订单。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"03cd5dfc479bb1bd86d7ad0c5c5aebaacbe47b7ede302461f6e05d9888674ad1\", \"problems with platinum account terminations\"], [\"068934c154175d823ba4ae78e9fb2bf07eaa61d1b1dce21763ee9ddad5aabbc6\", \"deleting gold account\"], [\"07e88d0da9e0e24af492018dded78e54ae78f568c4489afa4ab29181a67aeef0\", \"I don't make use of the bloody user, I need  to cancel it\"], [\"08fc6a8dafedda26b326dd58f095b1825346f067247fd70c834fcecce4bf8a20\", \"question about the cancellation of a Platinum account\"], [\"09763a27665b21b8d3a937b750ce62450f461f819ab3940dedfb1693074c814a\", \"can you help me closing the free account?\"]]",
+      "source_count": 159
+    },
+    {
+      "intent": "delivery_options",
+      "question": "shipments to Philadelphia",
+      "answer": "处理此问题前需要核对：商品、收货地区、商家配送配置。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"0072d78e5db29e315bf609e3243b8d3a5b06c099c7d538feaaeec0dfeca84681\", \"shipments to Philadelphia\"], [\"052cce9cfcfe97fda18e1d5ebc21869d4b0c94e164d92ec15ccc25db72765eed\", \"shipments to Finland\"], [\"05823286803d70a36f05b0ac7aa91abecd03f062000bae4499db8a40133777d0\", \"do you ship to Hungary?\"], [\"061d07b18c4e923c9779b4bbf32d7b9f1d5a6148816faa87f5897795efe26567\", \"do udeliver to Canada\"], [\"0927ff696ec4b6d1b11b8fca465e3ad3a61d41fd777e43731aa5584dcf84028d\", \"shipping to Munich\"]]",
+      "source_count": 182
+    },
+    {
+      "intent": "delivery_period",
+      "question": "how can I see how soon can I expect the delivery?",
+      "answer": "处理此问题前需要核对：订单号、实时物流与承诺时效。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"00284e6dee238d9d4d2b7de0b500444f238887f5f4da8562479a735cc00a7f7e\", \"how can I see how soon can I expect the delivery?\"], [\"0131238b0996f9273d4e14efcdf4e472604c8076fe380f7c20e9c9304dd22659\", \"I have to see how long the shipping takes, how do I do it?\"], [\"01bb9a1364725e762a22276423d4167e01272fee2e85189df75240c1cc21f0ef\", \"i need assistance to check when will my item arrive\"], [\"028d5cf32b030a093131af811f35c0f7e9a88f5a9fa6751af377d535485cb87d\", \"I want to see when will my purchase arrive, I need help\"], [\"02abeaa0323813413160ed9fdd9d36ee6d4016be8f732a502f1c0ea2d583989d\", \"I am looking for shipping period, can you help me find them?\"]]",
+      "source_count": 204
+    },
+    {
+      "intent": "edit_account",
+      "question": "moidfy information on Freemium account",
+      "answer": "处理此问题前需要核对：需要修改的字段、账户归属验证。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"02cc2e204b048ccd5f2f95345bffa34c1e460fe5e371f7410c125559415364a8\", \"moidfy information on Freemium account\"], [\"03524104c8259ac37215dd8a9f9840dda8b1ac5c34c9400d5d2eac160141bd2d\", \"edit account\"], [\"087bc52b39dfcbd6f78c403582ae9430a97d8422e533bb7078c83813818ea981\", \"change data on gold account\"], [\"08f8cc4a88e29b9c7e06b999fda178b9bb4654806eb4e09c8fc1bd7f996b9d52\", \"could you help me edit my bloody user?\"], [\"0ac772ef84bc9505fd40b43bdfddaf72e3cdfa6cabf6e9feae84fefcb1ca7d16\", \"modifying info on Freemiumaccount\"]]",
+      "source_count": 186
+    },
+    {
+      "intent": "get_invoice",
+      "question": "get invoice #37777",
+      "answer": "处理此问题前需要核对：订单号、依法所需的开票信息。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"009c06d431ff6cb9491a341ff67bd58c00ae9add1729e3785ad14c729519dee9\", \"get invoice #37777\"], [\"04ec06bae13a14dff1fa9a557b1ac1ee7bd35bd8b5555a00b8b7cda4318c7b9b\", \"how do I get my bill from Mr. Smith ?\"], [\"11e0fa8cc4fb9845d888224b44f13da4fbad49f968f0ede6718dd7986abe9187\", \"help to download the bill from Mr. Smith\"], [\"1593e617d3f926b109f24deba68a22e1a147a554b63fb15b59d8be8addd91e0b\", \"I want to download my bills from Mr. Jones\"], [\"170d3a96de31eead5caed0ed330d2a501946308afa2dd480de55f0a4a1416212\", \"need to download invoice #12588 how do i do it\"]]",
+      "source_count": 157
+    },
+    {
+      "intent": "get_refund",
+      "question": "where can i get my money back",
+      "answer": "本沙箱需先核对身份、支付与风险状态，并确认客户当前退款意愿。符合规则时退款金额等于实付，自动处理上限为20000最小货币单位；超限或条件不明转人工。该限制仅用于合成演练，不代表其他商家政策。",
+      "status": "draft",
+      "examples": "[[\"0011b14ace5c4eed01910fe770b29fad4a63d13174ff6d4327c5ef4fce1edee1\", \"where can i get my money back\"], [\"0083e0a719f7574179407f1ab3df035a1edd573dbe9586b141e1a634fd8ba557\", \"I try to demand a compensation\"], [\"024bd7c76ef78be4dfb9f4081f7e0fc92a30a0187deac84bde7830508b6bf10b\", \"i do not know what i need to do to request a reimbursement\"], [\"06b81a56b1fa62c8f778f2fead724591b26d706188b78c9f75fcce2cfe8ff2d9\", \"where could I receive a compensation of money?\"], [\"070d299e9227059665d795b1d57fec4d65b6228e74f43d1295ed37f76fa221f8\", \"reabting 1499 dollars\"]]",
+      "source_count": 188
+    },
+    {
+      "intent": "newsletter_subscription",
+      "question": "assistance subscribing to the newsletter",
+      "answer": "处理此问题前需要核对：订阅类型、明确订阅或退订意愿。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"06541ac3692456af7c879a0f84ae668379e5efa97e563fc3c19c8fee65d89c3e\", \"assistance subscribing to the newsletter\"], [\"0994ba3790baf152daecb95f57d04086bdf7cb283c913b419d16e1cdc912bd1b\", \"i do not know how to unsubsrcibe from ur newsletter\"], [\"0ae2c0dfc785a4a742dd8170317416253195fa1bc6ba1ef111f31c817d43fdcc\", \"assistance to receive ure goddamn newsletter\"], [\"0c3b97c89aae8de3d10b321eb95cf7118852a59c27c99a4efd12dd2fc7166f29\", \"i need assistance subscribing to ur newsletter\"], [\"0e0d8c9a90368ace262a6e0f5558961672d8ed09c102159ad756e1008fabcbfb\", \"assistance canceling my company newsletter subscription\"]]",
+      "source_count": 142
+    },
+    {
+      "intent": "payment_issue",
+      "question": "i cant pay need help to inform of a payment issue",
+      "answer": "处理此问题前需要核对：订单号、脱敏支付状态、支付流水核对。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"00626947d0263ff1fdf6a757e51cadf06823aa776e5bce2fd6412e2158f0e728\", \"i cant pay need help to inform of a payment issue\"], [\"030a622a714958042063e7d0c8b9d279d28965684b017b8bc088a8f6e97bdf10\", \"help with payment\"], [\"0628a412a932c9e992209ff02c3bc2b4b422985865835e69abf0d0813f722a18\", \"I want assistance informing of an error with  online payment\"], [\"0704d3a563b14d16d37e08be4b61da5b16c2c0507f85b52202192c8099ecf247\", \"I do not know what to di to inform of errors with payment\"], [\"0990e5ff0984ef4b788703ce7109dad532f8d6c37df5f4deeef6cc427596ca68\", \"i do not know how i could infolrm of a problem with payment\"]]",
+      "source_count": 153
+    },
+    {
+      "intent": "place_order",
+      "question": "help me ordering some of ur article",
+      "answer": "处理此问题前需要核对：商品、数量、库存和结算入口。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"001e6b1e0cd883730ef0627ed6a137991ad33fc738ead4a63d408a69efa01efd\", \"help me ordering some of ur article\"], [\"0726994af18d644c33324e8ebf131c7c6e2a6a733a1fc8a806a574162c6a880c\", \"I have to earn several of your article, can you help me?\"], [\"0ca9f9d6d0be09f9fb60be34657ad44a211383343e21421ea9c0d645d269836d\", \"assistance to earn several of your article\"], [\"0d2d18f74573931e9ffde0885232337eea8f73aaa453e117fab34f48fb2e9660\", \"where to order some of ur item\"], [\"0f0bd4fdb27ab9194c2ad78bb8e876b61a1583ef1d9e2db5abac63dd6ed9856b\", \"I need to purchase something, help me\"]]",
+      "source_count": 158
+    },
+    {
+      "intent": "recover_password",
+      "question": "help me resoring my profile pwd",
+      "answer": "处理此问题前需要核对：官方找回入口；不得索取密码或验证码。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"038c64b5a91156e736a3f99f3ff5a96652b11d79c23251682148efc1e41ff6c3\", \"help me resoring my profile pwd\"], [\"07b2cb38fb952dce3d96310b06acd528a56f0dc7a90a02078aeedc724836ae3e\", \"help to restore the key of my user\"], [\"08aaebb322593693ba18e3b43da333fc110e67a3d88cc34bcf1e0c59240ee7c6\", \"where can I recover my damn profile password?\"], [\"08f2f76e97014faa1bd173e8d7b67084c298a221a8e58afdb9d60f9030767a54\", \"where could I retrieve the key of my account?\"], [\"0ae9a724dcfb41375d40aa0ae4b5ea8005fdaa66900d400020277596908414e5\", \"I have got to retrieve my user PIN code\"]]",
+      "source_count": 157
+    },
+    {
+      "intent": "registration_problems",
+      "question": "need assistance to inform of issues  with registrations",
+      "answer": "处理此问题前需要核对：脱敏报错信息、发生时间。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"02a044775884205443687246b3bfab6a4c79381992025206fc9db63527c91581\", \"need assistance to inform of issues  with registrations\"], [\"02c3a38a03e3027230588b8fbb8ac7c6fc12bd1dbde214a7ea5b51240400b2ab\", \"I want to inform of sign-up issues\"], [\"05d955d70146e067f61d83b1039caa23358deddb20e01ad091c9a91bef5cb33d\", \"i want assistance to infrm of issues with a sign-up\"], [\"0d68161c258cb2204969472f4853c43ddd5ff77d4843b56a957907955123b4f0\", \"I do not know what to do to notify of a signup issue\"], [\"0f26bb4e5975cae71a666c85589711f5fa78a66c2e73f643cd80f9b30445a3b1\", \"I try to report problems with registrations\"]]",
+      "source_count": 146
+    },
+    {
+      "intent": "review",
+      "question": "leave opinion about a product",
+      "answer": "处理此问题前需要核对：订单状态、评价入口。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"059a65df43744cdde3a651fb6694dccc631badabd3e321a6ce122d274df6278e\", \"leave opinion about a product\"], [\"06b54e596d4da2b48ce48d3e1a2042af6aa8395e98d352882fa411b1ec4fb39c\", \"can ya help me to submkt some feedback about a service\"], [\"080b2fb138922e1d5a6db728a853e7e1d175f575694fba0706f322eccd1dbbd0\", \"leaving review for your company\"], [\"09129c8500df6f39d1e98abdd43c2aaf82f04b91436b396133b25e82387d61ab\", \"is there a way to leave some feedback for your services?\"], [\"0a52053e4abf613921c7d0be61e3dc043f6344eba9467cd305b67d4ddd2df6d1\", \"I need help to leave my feedback for a product\"]]",
+      "source_count": 174
+    },
+    {
+      "intent": "set_up_shipping_address",
+      "question": "i have a  problem submitting a secondary delivery address",
+      "answer": "处理此问题前需要核对：官方地址管理入口。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"08352e5667227bbd31345779915b9904fde4e47a650f1e129d3dd6772fca2963\", \"i have a  problem submitting a secondary delivery address\"], [\"0879e049886f3bc3dc86c72f2c9fcfefa39b6f3b0a6e1a8414a79037d76253ff\", \"how can I submit the delivery address ?\"], [\"08e101a2c1c70ba1621f15af97b0f5cbb88bc7db99a763e62fd73ce436484278\", \"I'm trying to enter an different delivery address\"], [\"09ebd7625734f6f2061598d4858981e5c1658f8f1a48e50bec0d64c577ae74da\", \"there are problems entering another shipping address\"], [\"0ab4219519388ca062330d813f8bea54445117b4d2fe1c48e6ad8ad2bcb6826f\", \"I am trying to set my secondary delivery address up\"]]",
+      "source_count": 140
+    },
+    {
+      "intent": "switch_account",
+      "question": "I do not know how I can change to the premium account",
+      "answer": "处理此问题前需要核对：当前登录状态、官方入口。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"00c2807a1f78aa5162c32adce0a9d64513f922b2672b0dbf090112a27cff706a\", \"I do not know how I can change to the premium account\"], [\"01312f57846d9c88ff9d80d4e4e2b0dcb658c1526ca0899b67cd66b60bb4d169\", \"i need assistance using the Platinum prfile\"], [\"03fca047beeb62aa545fb7bb554cdfc18d988f4834f46716de6a33cf8bf7d505\", \"I do not know how I can change to the Pro account\"], [\"048ab7ecc0b286c20a1fbd03745c38a52b0bf8b777569543979238775bf102b0\", \"help using the standard account\"], [\"09847d5571aa217e741ce7d1b84baf28052fa6629380d752d245f2a1b54624d3\", \"switching to standard account\"]]",
+      "source_count": 174
+    },
+    {
+      "intent": "track_order",
+      "question": "i dont know what i have to do to locate purchase 00123842",
+      "answer": "处理此问题前需要核对：订单号、身份验证、实时物流记录。当前演示尚未接入相应商家系统，不能确认实际办理结果；请通过商家官方渠道核实。",
+      "status": "draft",
+      "examples": "[[\"007f9925c0ff940f67610b7bfb31b2a475cdb0de61dbe1ea12a2c724a8ddbc3b\", \"i dont know what i have to do to locate purchase 00123842\"], [\"1021c956d648084468788cc094fd4fa520adc63516915135b3c03205ad36dc86\", \"tracking order\"], [\"1e16ec7d4f282d5c6a1722288fa19b8d8e3e9f708e31a521eed30790a6bec7df\", \"check order 00123842 current status\"], [\"2c562505cc7720d8375d770cd584d33f424e546ed7aa2ce3e022c5349eac531a\", \"I try to see the ETA of order 00123842\"], [\"3ae7791b819be981deefd5ceab500d4ead4673e4d6793cc11b6f2c665261a7c4\", \"how can I see purchase 00123842 current status?\"]]",
+      "source_count": 52
+    },
+    {
+      "intent": "track_refund",
+      "question": "I'm waitig for a refund of 160 dollars",
+      "answer": "先查询退款回执和订单状态。超时不等于退款失败，不应直接重复退款；本演示没有真实支付渠道到账查询能力，不能承诺到账时间。",
+      "status": "draft",
+      "examples": "[[\"004b8f08864829e191f199d13209c37abe5baa9f6b3a76a244af0c42b7ab79fb\", \"I'm waitig for a refund of 160 dollars\"], [\"0151407a3e16e8a1536fa2c746afa3271374b898620cf2b88369c60f73c66efd\", \"I'm waiting for a fucking rebate of $299\"], [\"03840490f66ab1217c1270d282d88cecf470b089856d747e9e20ddbc69ad7519\", \"I am waiting for a reimbursement of $3\"], [\"05c07070bea53b30858c6cad2894ca30de89f47f1535304c5e1e39392f12e5b5\", \"I'm waiting for a compensation of 299 dollars\"], [\"086cce6b6242c6880eec54c7d2dd94391a9b608c2ebc9a87cf020be9ba119b5d\", \"I expect a restitution of $3, was it processed\"]]",
+      "source_count": 170
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "selected": "v1",
+  "gate_passed": false,
+  "non_disputed_baseline_correct": 28,
+  "non_disputed_candidate_correct": 24,
+  "challenge_correct": 8,
+  "note": "Original-label scores retain all cases. Exclusions apply only to this predeclared auxiliary gate.",
+  "frozen_at": "2026-09-16T04:55:32.853410+00:00",
+  "prompt_sha256": "0f840f82ce09384d02690b4dd0c60c5489d7112fdad710e10a350dcad12f9923"
+}

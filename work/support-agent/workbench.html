@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>衡准 · 执行工作台</title><link rel="stylesheet" href="workbench.css"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230d2839'/%3E%3Cpath d='M8 9v14m16-14v14M8 16h16' stroke='%235ed5d3' stroke-width='3'/%3E%3C/svg%3E"></head>
+<body><header><a class="brand" href="workbench.html">衡准 <span>执行工作台</span></a><nav><a href="index.html">原型沙盘</a><button id="evidenceToggle">项目能力与证据</button><span id="connection" class="pill">连接中</span></nav></header>
+<main><section class="heading"><div><p class="eyebrow">AFTER-SALES / EXECUTION WORKSPACE</p><h1>让每一次处置有据可查</h1><p>沙箱订单 · 后端持久化 · 人工确认后恢复 · 执行结果核验</p></div><button id="refresh" disabled>刷新任务</button></section>
+<div id="notice" role="status" aria-live="polite">正在检查后端连接…</div><p id="signIn" hidden><a href="/signin-with-chatgpt?return_to=%2Fworkbench.html" target="_top">使用 ChatGPT 登录，进入自己的沙箱工作台 →</a></p>
+<section class="metrics" aria-label="当前最近100条沙箱任务"><article><span>已载入任务</span><strong id="total">—</strong></article><article><span>已核验完成</span><strong id="completed">—</strong></article><article><span>等待人工</span><strong id="human">—</strong></article><article><span>等待重试 / 对账</span><strong id="retryable">—</strong></article></section>
+<section class="workspace"><aside class="panel"><div class="panelhead"><h2>任务队列</h2><span>最近 100 条</span></div><label for="scenario">创建合成订单</label><select id="scenario"><option value="normal">正常换货</option><option value="conflict">客户意愿冲突</option><option value="tool_failure">操作成功，但响应丢失</option></select><button class="primary full" id="create" disabled>新建演练任务</button><div id="tasks" class="tasklist"><p class="muted">连接后可读取已保存任务。</p></div></aside>
+<section class="panel detail"><div class="panelhead"><h2 id="taskTitle">选择一个任务</h2><span class="pill" id="taskState">尚未选择</span></div><div id="empty" class="empty">从左侧创建一个场景，查看真实接口返回的执行过程。</div><div id="taskBody" hidden><p id="taskMeta" class="mono muted"></p><section class="facts"><h3>客户原话与授权依据</h3><blockquote id="quote"></blockquote><p id="source" class="muted"></p><div id="factGrid" class="factgrid"></div></section><section class="actionbar"><button class="primary" id="run">执行任务</button><button id="download">导出任务轨迹</button><span id="runHint" class="muted"></span></section><form id="confirmForm" hidden><h3>人工核对与纠正</h3><p>核对上方原话，并在演练中确认客户当前需求。原话将保留，确认记录另行追加。</p><label for="intent">确认后的需求</label><select id="intent" required><option value="">请选择，不默认替客户决定</option><option value="replace">换同档商品</option><option value="refund">退款</option></select><label for="note">确认依据 / 错误归因</label><textarea id="note" required maxlength="1000" placeholder="例如：已核对原话；结构化偏好标记错误。本次演练确认客户希望换货。"></textarea><label class="check"><input id="checked" type="checkbox" required>我已核对证据，正在操作合成演练数据</label><button class="primary" type="submit">保存确认，恢复为待执行</button></form><section id="outcome"></section><h3>执行轨迹</h3><ol id="trace"></ol></div></section>
+<aside class="panel explain"><div class="panelhead"><h2>运行边界</h2></div><p id="planner">规划器：尚未连接</p><h3>代码负责兜底</h3><ul><li>没有退款授权，不自动退款。</li><li>库存、支付、金额和风险在后端校验。</li><li>响应丢失先查回执，不重复扣减。</li><li>人工确认不会绕过安全红线。</li></ul><h3>状态会被保存</h3><p>刷新页面后仍可查询任务、确认记录和回执；不是浏览器动画或本地缓存伪造的完成状态。</p><p class="muted">仅沙箱业务。没有真实支付、真实客户消息或生产业务指标。</p></aside></section>
+<section id="evidence" class="panel evidence" hidden>
+  <div class="panelhead"><h2>项目能力与证据</h2><span>已验证 / 部分实现 / 待建设</span></div>
+  <p>业务能力与验证边界请以测试和实际运行记录为准。</p>
+  <div class="tablewrap"><table><thead><tr><th>JD 方向</th><th>可展示证据</th><th>边界与下一步</th></tr></thead><tbody>
+    <tr><td>需求理解与归因</td><td>冲突升级策略；保留原话与人工修正依据</td><td>部分实现：缺少真实访谈、频次与价值基线</td></tr>
+    <tr><td>Agent 架构</td><td>任务状态、规划器接口、工具执行、人工恢复、结果核验</td><td>沙箱闭环已实现；不是自主多工具通用 Agent</td></tr>
+    <tr><td>知识与环境</td><td>订单上下文、政策约束、任务记忆；本机 DeepSeek 适配器</td><td>真实模型已在独立实验调用；新链路待联调；RAG 未实现</td></tr>
+    <tr><td>工程落地与观测</td><td>云端持久化、登录身份隔离、API、版本校验、时间线、JSON 导出</td><td>云端规则沙箱；未接真实订单或分布式支付事务</td></tr>
+    <tr><td>评测与迭代</td><td>真实模型开发集 V1 3/5 → V2 5/5；云端代码14项测试通过</td><td>5 条已知开发案例，不是线上准确率；工程测试与模型评测分开</td></tr>
+    <tr><td>性能与稳定性</td><td>有限重试、响应丢失对账、并发更新冲突测试</td><td>部分实现：未压测；未实现异步队列或高并发架构</td></tr>
+  </tbody></table></div>
+  <h3>业务演示顺序</h3><p>解释业务授权边界 → 跑正常任务 → 展示冲突与人工恢复 → 注入响应丢失并对账 → 导出轨迹解释失败归因 → 说明评测局限和下一步实验。</p>
+</section>
+</main><footer>衡准 · 缺货售后处置工程原型 ｜ 数据均为合成演练，不代表真实商家业绩</footer><script src="workbench.js"></script></body></html>

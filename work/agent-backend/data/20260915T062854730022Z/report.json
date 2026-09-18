@@ -1,0 +1,477 @@
+{
+  "environment": "sandbox",
+  "planner": "rule-fixture-1",
+  "paid_api_calls": 0,
+  "journeys": [
+    {
+      "scenario": "normal",
+      "states": [
+        "READY",
+        "COMPLETED"
+      ],
+      "task": {
+        "id": "e2a2b7f55434446d9ba7c49b6c379500",
+        "event_id": "demo-normal",
+        "order_id": "normal",
+        "state": "COMPLETED",
+        "attempts": 1,
+        "plan": {
+          "action": "replace",
+          "amount_minor": 0,
+          "sku": "ALT-A",
+          "reason": "沙箱规则规划器；不是模型调用"
+        },
+        "created_at": "2026-09-15T06:28:54.756730+00:00",
+        "order": {
+          "id": "normal",
+          "facts": {
+            "payment": "paid",
+            "paid_minor": 10000,
+            "stock": 1,
+            "price_minor": 9000,
+            "fresh_stock": true,
+            "identity_verified": true,
+            "safety_risk": false,
+            "sku": "ALT-A",
+            "confirmed_intent": "replace",
+            "preference_conflict": false,
+            "human_confirmed": false,
+            "customer_text": "可以换同档商品",
+            "message_id": "sandbox-message-1",
+            "message_at": "2026-09-15T00:00:00Z",
+            "accept_substitute": true
+          },
+          "status": "replaced",
+          "fail_mode": "none"
+        },
+        "trace": [
+          {
+            "seq": 1,
+            "task_id": "e2a2b7f55434446d9ba7c49b6c379500",
+            "at": "2026-09-15T06:28:54.758745+00:00",
+            "event": "event.received",
+            "details": {
+              "order_id": "normal",
+              "environment": "sandbox"
+            }
+          },
+          {
+            "seq": 2,
+            "task_id": "e2a2b7f55434446d9ba7c49b6c379500",
+            "at": "2026-09-15T06:28:54.764667+00:00",
+            "event": "context.loaded",
+            "details": {
+              "facts": {
+                "payment": "paid",
+                "paid_minor": 10000,
+                "stock": 2,
+                "price_minor": 9000,
+                "fresh_stock": true,
+                "identity_verified": true,
+                "safety_risk": false,
+                "sku": "ALT-A",
+                "confirmed_intent": "replace",
+                "preference_conflict": false,
+                "human_confirmed": false,
+                "customer_text": "可以换同档商品",
+                "message_id": "sandbox-message-1",
+                "message_at": "2026-09-15T00:00:00Z",
+                "accept_substitute": true
+              },
+              "policy_version": "sandbox-policy-1"
+            }
+          },
+          {
+            "seq": 3,
+            "task_id": "e2a2b7f55434446d9ba7c49b6c379500",
+            "at": "2026-09-15T06:28:54.764909+00:00",
+            "event": "planner.completed",
+            "details": {
+              "planner_version": "rule-fixture-1",
+              "prompt_sha256": null,
+              "latency_ms": 0,
+              "valid": true
+            }
+          },
+          {
+            "seq": 4,
+            "task_id": "e2a2b7f55434446d9ba7c49b6c379500",
+            "at": "2026-09-15T06:28:54.764909+00:00",
+            "event": "tool.executed",
+            "details": {
+              "tool": "sandbox.replace",
+              "receipt": {
+                "id": "beb953932fd84fb0bde16df6ccc1b657",
+                "order_id": "normal",
+                "action": "replace",
+                "amount_minor": 0,
+                "sku": "ALT-A",
+                "status": "replaced",
+                "sandbox": true
+              }
+            }
+          },
+          {
+            "seq": 5,
+            "task_id": "e2a2b7f55434446d9ba7c49b6c379500",
+            "at": "2026-09-15T06:28:54.764909+00:00",
+            "event": "result.verified",
+            "details": {
+              "verified": true,
+              "observed_status": "replaced"
+            }
+          }
+        ],
+        "receipt": {
+          "id": "beb953932fd84fb0bde16df6ccc1b657",
+          "order_id": "normal",
+          "action": "replace",
+          "amount_minor": 0,
+          "sku": "ALT-A",
+          "status": "replaced",
+          "sandbox": true
+        }
+      }
+    },
+    {
+      "scenario": "conflict",
+      "states": [
+        "READY",
+        "WAITING_HUMAN",
+        "READY",
+        "COMPLETED"
+      ],
+      "task": {
+        "id": "6e15087387d24c04ba8a92355db62576",
+        "event_id": "demo-conflict",
+        "order_id": "conflict",
+        "state": "COMPLETED",
+        "attempts": 1,
+        "plan": {
+          "action": "refund",
+          "amount_minor": 10000,
+          "sku": "",
+          "reason": "沙箱规则规划器；不是模型调用"
+        },
+        "created_at": "2026-09-15T06:28:54.769902+00:00",
+        "order": {
+          "id": "conflict",
+          "facts": {
+            "payment": "paid",
+            "paid_minor": 10000,
+            "stock": 2,
+            "price_minor": 9000,
+            "fresh_stock": true,
+            "identity_verified": true,
+            "safety_risk": false,
+            "sku": "ALT-A",
+            "confirmed_intent": "refund",
+            "preference_conflict": false,
+            "human_confirmed": true,
+            "customer_text": "可以换同档商品",
+            "message_id": "sandbox-message-1",
+            "message_at": "2026-09-15T00:00:00Z",
+            "accept_substitute": false
+          },
+          "status": "refunded",
+          "fail_mode": "none"
+        },
+        "trace": [
+          {
+            "seq": 6,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.770908+00:00",
+            "event": "event.received",
+            "details": {
+              "order_id": "conflict",
+              "environment": "sandbox"
+            }
+          },
+          {
+            "seq": 7,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.777066+00:00",
+            "event": "context.loaded",
+            "details": {
+              "facts": {
+                "payment": "paid",
+                "paid_minor": 10000,
+                "stock": 2,
+                "price_minor": 9000,
+                "fresh_stock": true,
+                "identity_verified": true,
+                "safety_risk": false,
+                "sku": "ALT-A",
+                "confirmed_intent": null,
+                "preference_conflict": true,
+                "human_confirmed": false,
+                "customer_text": "可以换同档商品",
+                "message_id": "sandbox-message-1",
+                "message_at": "2026-09-15T00:00:00Z",
+                "accept_substitute": false
+              },
+              "policy_version": "sandbox-policy-1"
+            }
+          },
+          {
+            "seq": 8,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.777066+00:00",
+            "event": "planner.completed",
+            "details": {
+              "planner_version": "rule-fixture-1",
+              "prompt_sha256": null,
+              "latency_ms": 0,
+              "valid": true
+            }
+          },
+          {
+            "seq": 9,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.777066+00:00",
+            "event": "human.requested",
+            "details": {
+              "reason": "沙箱规则规划器；不是模型调用"
+            }
+          },
+          {
+            "seq": 10,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.783304+00:00",
+            "event": "human.confirmed",
+            "details": {
+              "actor": "demo-operator",
+              "source_message_id": "sandbox-message-1",
+              "note": "模拟人工核对原话并确认客户当前选择退款；未联系真实客户",
+              "previous_intent": null,
+              "confirmed_intent": "refund"
+            }
+          },
+          {
+            "seq": 11,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.789343+00:00",
+            "event": "context.loaded",
+            "details": {
+              "facts": {
+                "payment": "paid",
+                "paid_minor": 10000,
+                "stock": 2,
+                "price_minor": 9000,
+                "fresh_stock": true,
+                "identity_verified": true,
+                "safety_risk": false,
+                "sku": "ALT-A",
+                "confirmed_intent": "refund",
+                "preference_conflict": false,
+                "human_confirmed": true,
+                "customer_text": "可以换同档商品",
+                "message_id": "sandbox-message-1",
+                "message_at": "2026-09-15T00:00:00Z",
+                "accept_substitute": false
+              },
+              "policy_version": "sandbox-policy-1"
+            }
+          },
+          {
+            "seq": 12,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.789343+00:00",
+            "event": "planner.completed",
+            "details": {
+              "planner_version": "rule-fixture-1",
+              "prompt_sha256": null,
+              "latency_ms": 0,
+              "valid": true
+            }
+          },
+          {
+            "seq": 13,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.789903+00:00",
+            "event": "tool.executed",
+            "details": {
+              "tool": "sandbox.refund",
+              "receipt": {
+                "id": "ad09001d809345ed95b95a3498fd05f2",
+                "order_id": "conflict",
+                "action": "refund",
+                "amount_minor": 10000,
+                "sku": "",
+                "status": "refunded",
+                "sandbox": true
+              }
+            }
+          },
+          {
+            "seq": 14,
+            "task_id": "6e15087387d24c04ba8a92355db62576",
+            "at": "2026-09-15T06:28:54.789903+00:00",
+            "event": "result.verified",
+            "details": {
+              "verified": true,
+              "observed_status": "refunded"
+            }
+          }
+        ],
+        "receipt": {
+          "id": "ad09001d809345ed95b95a3498fd05f2",
+          "order_id": "conflict",
+          "action": "refund",
+          "amount_minor": 10000,
+          "sku": "",
+          "status": "refunded",
+          "sandbox": true
+        }
+      }
+    },
+    {
+      "scenario": "tool_failure",
+      "states": [
+        "READY",
+        "RETRYABLE",
+        "COMPLETED"
+      ],
+      "task": {
+        "id": "617ec2eb4ba34ae58386e6912101351e",
+        "event_id": "demo-tool_failure",
+        "order_id": "tool_failure",
+        "state": "COMPLETED",
+        "attempts": 2,
+        "plan": {
+          "action": "replace",
+          "amount_minor": 0,
+          "sku": "ALT-A",
+          "reason": "沙箱规则规划器；不是模型调用"
+        },
+        "created_at": "2026-09-15T06:28:54.794925+00:00",
+        "order": {
+          "id": "tool_failure",
+          "facts": {
+            "payment": "paid",
+            "paid_minor": 10000,
+            "stock": 1,
+            "price_minor": 9000,
+            "fresh_stock": true,
+            "identity_verified": true,
+            "safety_risk": false,
+            "sku": "ALT-A",
+            "confirmed_intent": "replace",
+            "preference_conflict": false,
+            "human_confirmed": false,
+            "customer_text": "可以换同档商品",
+            "message_id": "sandbox-message-1",
+            "message_at": "2026-09-15T00:00:00Z",
+            "accept_substitute": true
+          },
+          "status": "replaced",
+          "fail_mode": "none"
+        },
+        "trace": [
+          {
+            "seq": 15,
+            "task_id": "617ec2eb4ba34ae58386e6912101351e",
+            "at": "2026-09-15T06:28:54.795910+00:00",
+            "event": "event.received",
+            "details": {
+              "order_id": "tool_failure",
+              "environment": "sandbox"
+            }
+          },
+          {
+            "seq": 16,
+            "task_id": "617ec2eb4ba34ae58386e6912101351e",
+            "at": "2026-09-15T06:28:54.801674+00:00",
+            "event": "context.loaded",
+            "details": {
+              "facts": {
+                "payment": "paid",
+                "paid_minor": 10000,
+                "stock": 2,
+                "price_minor": 9000,
+                "fresh_stock": true,
+                "identity_verified": true,
+                "safety_risk": false,
+                "sku": "ALT-A",
+                "confirmed_intent": "replace",
+                "preference_conflict": false,
+                "human_confirmed": false,
+                "customer_text": "可以换同档商品",
+                "message_id": "sandbox-message-1",
+                "message_at": "2026-09-15T00:00:00Z",
+                "accept_substitute": true
+              },
+              "policy_version": "sandbox-policy-1"
+            }
+          },
+          {
+            "seq": 17,
+            "task_id": "617ec2eb4ba34ae58386e6912101351e",
+            "at": "2026-09-15T06:28:54.801674+00:00",
+            "event": "planner.completed",
+            "details": {
+              "planner_version": "rule-fixture-1",
+              "prompt_sha256": null,
+              "latency_ms": 0,
+              "valid": true
+            }
+          },
+          {
+            "seq": 18,
+            "task_id": "617ec2eb4ba34ae58386e6912101351e",
+            "at": "2026-09-15T06:28:54.802653+00:00",
+            "event": "tool.executed",
+            "details": {
+              "tool": "sandbox.replace",
+              "receipt": {
+                "id": "2c8f4b98aa1c405db969cc0c802dfe83",
+                "order_id": "tool_failure",
+                "action": "replace",
+                "amount_minor": 0,
+                "sku": "ALT-A",
+                "status": "replaced",
+                "sandbox": true
+              }
+            }
+          },
+          {
+            "seq": 19,
+            "task_id": "617ec2eb4ba34ae58386e6912101351e",
+            "at": "2026-09-15T06:28:54.802653+00:00",
+            "event": "tool.response_lost",
+            "details": {
+              "reason": "Simulated acknowledgement timeout; reconcile before retry"
+            }
+          },
+          {
+            "seq": 20,
+            "task_id": "617ec2eb4ba34ae58386e6912101351e",
+            "at": "2026-09-15T06:28:54.809013+00:00",
+            "event": "execution.reconciled",
+            "details": {
+              "verified": true,
+              "receipt": {
+                "id": "2c8f4b98aa1c405db969cc0c802dfe83",
+                "order_id": "tool_failure",
+                "action": "replace",
+                "amount_minor": 0,
+                "sku": "ALT-A",
+                "status": "replaced",
+                "sandbox": true
+              }
+            }
+          }
+        ],
+        "receipt": {
+          "id": "2c8f4b98aa1c405db969cc0c802dfe83",
+          "order_id": "tool_failure",
+          "action": "replace",
+          "amount_minor": 0,
+          "sku": "ALT-A",
+          "status": "replaced",
+          "sandbox": true
+        }
+      }
+    }
+  ]
+}

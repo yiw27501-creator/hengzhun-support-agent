@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+*.db
+*.db-*
+!work/agent-backend/data/bitext-corpus-20260915/support.db
+.venv/

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="衡准：主动发现订单异常并自主完成售后补救的电商自愈 Agent。" />
+  <title>衡准 · 售后自愈 Agent</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="rail">
+      <div class="logo">衡</div>
+      <nav aria-label="产品导航">
+        <button class="rail-btn active" data-tip="闭环演练" aria-label="闭环演练">⌁</button>
+        <button class="rail-btn" id="evalBtn" data-tip="质量评测" aria-label="质量评测">◫</button>
+        <button class="rail-btn" id="designBtn" data-tip="产品设计" aria-label="产品设计">◇</button>
+      </nav>
+      <div class="rail-bottom"><span class="online"></span><div class="avatar">林</div></div>
+    </aside>
+    <main>
+      <p style="padding:12px;background:#fff1da;color:#704819;font-size:14px">原型沙盘：本页预设场景及业务指标为示意数据，不代表真实上线效果。 <a href="workbench.html">进入后端执行工作台 →</a></p>
+      <header class="topbar">
+        <div><div class="breadcrumb">AUTONOMOUS RECOVERY / 实时沙盘</div><h1>售后自愈控制台 <span class="demo-chip" id="modelChip">正在检测模型</span></h1></div>
+        <div class="header-actions"><button class="secondary" id="customBtn">自定义异常</button><button class="secondary" id="resetBtn">重置演练</button><button class="primary" id="runBtn"><span>▶</span> 运行 Agent</button></div>
+      </header>
+      <section class="north-star" aria-label="以下为示意业务指标，非实测">
+        <article><span>自主解决率</span><strong>73.8%</strong><em class="up">↑ 8.4%</em></article>
+        <article><span>投诉前干预率</span><strong>61.2%</strong><em class="up">↑ 12.1%</em></article>
+        <article><span>解决后复发率</span><strong>3.6%</strong><em class="down">↓ 2.3%</em></article>
+        <article><span>单次挽回成本</span><strong>¥18.40</strong><em>预算内</em></article>
+        <div class="goal"><span>北极星指标</span><strong>验证后的自主解决数</strong><i>不是回复量，也不是工单关闭量</i></div>
+      </section>
+      <section class="workbench">
+        <aside class="scenario-panel">
+          <div class="section-head"><div><span class="kicker">01 / 输入</span><h2>选择异常场景</h2></div><span class="count">5</span></div>
+          <div id="scenarioList" class="scenario-list"></div>
+          <div class="signal-card"><div class="signal-head"><span>实时信号源</span><i>LIVE</i></div><div class="signal-row"><span>物流事件流</span><b></b></div><div class="signal-row"><span>支付回调</span><b></b></div><div class="signal-row"><span>库存变化</span><b></b></div></div>
+        </aside>
+        <section class="run-panel">
+          <div class="section-head run-head"><div><span class="kicker">02 / Agent 执行</span><h2 id="caseTitle">物流停滞 · 投诉前预警</h2></div><span class="run-status idle" id="runStatus"><i></i>等待运行</span></div>
+          <div class="case-context" id="caseContext"></div><div class="timeline" id="timeline"></div>
+        </section>
+        <aside class="decision-panel"><div class="section-head"><div><span class="kicker">03 / 决策与结果</span><h2>自治控制</h2></div></div><div id="decisionContent"></div></aside>
+      </section>
+      <footer class="footer-note" id="runtimeNote"><span>●</span> 正在检测运行模式…</footer>
+    </main>
+  </div>
+  <dialog id="evalDialog" class="modal">
+    <div class="modal-head"><div><span class="kicker">评测界面原型 · 以下数字全部为示意，并未运行200条案例</span><h2>真实实验：5 条开发案例，V1 3/5 → V2 5/5</h2><p>小样本已知案例，不代表线上准确率。新执行政策需另行评测。</p></div><button class="close" data-close="evalDialog">×</button></div>
+    <div class="eval-grid">
+      <article><span>端到端任务成功率</span><strong>91.5%</strong><div class="bar"><i style="width:91.5%"></i></div><small>+9.5pp vs V2</small></article>
+      <article><span>高风险升级召回率</span><strong>98.0%</strong><div class="bar"><i style="width:98%"></i></div><small>安全红线指标</small></article>
+      <article><span>工具调用成功率</span><strong>96.7%</strong><div class="bar"><i style="width:96.7%"></i></div><small>含重试与幂等</small></article>
+      <article><span>严重错误率</span><strong>0.5%</strong><div class="bar danger"><i style="width:5%"></i></div><small>目标 &lt; 1%</small></article>
+    </div>
+    <table><thead><tr><th>版本</th><th>关键变化</th><th>成功率</th><th>人工介入</th><th>成本/单</th></tr></thead><tbody><tr><td>V1</td><td>单提示词直接决策</td><td>64%</td><td>42%</td><td>¥0.03</td></tr><tr><td>V2</td><td>结构化规划 + 工具约束</td><td>82%</td><td>24%</td><td>¥0.06</td></tr><tr class="best"><td>V3</td><td>动态授权 + 结果验证</td><td>91.5%</td><td>11%</td><td>¥0.08</td></tr></tbody></table>
+    <div class="eval-callout"><strong>发布门槛</strong><span>高风险召回率 ≥ 97% · 严重错误率 &lt; 1% · 成本增幅必须带来解决率增益</span></div>
+  </dialog>
+  <dialog id="designDialog" class="modal design-modal">
+    <div class="modal-head"><div><span class="kicker">PRODUCT SYSTEM</span><h2>AI 产品不只是提示词</h2></div><button class="close" data-close="designDialog">×</button></div>
+    <div class="product-loop">
+      <article><b>01</b><div><strong>问题与指标</strong><span>明确用户损失、业务价值和北极星指标</span></div></article><article><b>02</b><div><strong>数据与场景</strong><span>收集真实案例，定义正常、边界与对抗样本</span></div></article><article><b>03</b><div><strong>工作流与工具</strong><span>决定模型何时推理、调用什么、失败如何恢复</span></div></article><article><b>04</b><div><strong>提示词与结构输出</strong><span>表达目标、规则、证据要求和决策格式</span></div></article><article><b>05</b><div><strong>评测与红队</strong><span>离线回放、人工评分、线上指标和安全测试</span></div></article><article><b>06</b><div><strong>灰度与反馈闭环</strong><span>从建议模式逐级开放权限，持续吸收失败案例</span></div></article>
+    </div>
+    <div class="prompt-note"><strong>提示词优化需要，但排在系统设计之后。</strong><p>如果工具没有幂等、权限没有边界、评测没有标准，再漂亮的提示词也不能让产品可靠。优化方式应是：从失败案例出发修改一项规则，再用同一评测集回归，而不是凭感觉反复改文案。</p></div>
+  </dialog>
+  <dialog id="customDialog" class="modal custom-modal">
+    <div class="modal-head"><div><span class="kicker">LIVE MODEL TEST</span><h2>让 DeepSeek 判断未预设的异常</h2></div><button class="close" data-close="customDialog">×</button></div>
+    <p class="custom-help">输入一段订单异常。模型只负责理解、分级和提出动作；金额权限与真正执行仍由后端控制。</p>
+    <label class="custom-label" for="customInput">异常描述</label>
+    <textarea id="customInput" class="custom-input">客户购买的咖啡机已经付款，但仓库连续两次锁定库存失败。客户是年度会员，三天后要搬家，同城仓有一台升级款，价差 46 元。</textarea>
+    <div class="custom-actions"><span id="customStatus">等待分析</span><button class="primary" id="analyzeBtn">使用 DeepSeek 分析</button></div>
+    <pre id="customResult" class="custom-result" hidden></pre>
+  </dialog>
+  <div class="toast" id="toast"></div><script src="app.js"></script>
+</body>
+</html>

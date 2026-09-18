@@ -1,0 +1,47 @@
+{
+  "case": {
+    "id": "31cff727a64841129bc9b86b9df3463e",
+    "title": "Windows SQLite handle cleanup",
+    "expected": "Temporary database can be cleaned after use",
+    "actual": "Initial six quality tests failed during cleanup with WinError32",
+    "evidence": "test_quality.py; first local regression on 2026-09-16",
+    "source": "local_trace",
+    "state": "RELEASE_RECORDED",
+    "revision": 3,
+    "cause": "tool",
+    "priority": "P1",
+    "safety": false,
+    "owner": "local-operator",
+    "rationale": "sqlite context commits but does not close connection",
+    "change_ref": "quality.py: Quality.connect",
+    "hypothesis": "Close connection in finally after transaction completion",
+    "run_id": "5b7dd499c5d647cdac5a45719380ff12",
+    "acceptance_evidence": "66-test full suite passed after connection fix; local HTTP workflow completed",
+    "decision_note": "Record local engineering acceptance only, no cloud deployment or model release"
+  },
+  "regression": {
+    "id": "5b7dd499c5d647cdac5a45719380ff12",
+    "case_id": "31cff727a64841129bc9b86b9df3463e",
+    "case_revision": 2,
+    "suite": [
+      "test_engine",
+      "test_consent_version",
+      "test_clarification",
+      "test_poc",
+      "test_retrieval_eval",
+      "test_intent_iteration",
+      "test_split_router"
+    ],
+    "suite_hash": "0bfba35de3f630e1696d52ab43549a7c7808c6c3c44dfefe33415757ca784109",
+    "source_hash": "cebe34304eee07c22b6d6e2a0ec489d225dce9fc06d2d6cb910b4c9ddbe219fc",
+    "passed": true,
+    "exit_code": 0,
+    "output_hash": "5158fcf1851bcd8fedfa445bf93807fe77db909dd6b387c28d3a5255f552efd9",
+    "model_calls": 0,
+    "scope": "engineering regression only",
+    "at": "2026-09-16T13:04:37.999630+00:00"
+  },
+  "http": true,
+  "paid_model_calls": 0,
+  "limitation": "No visual UI QA; no production release; no model-quality claim"
+}

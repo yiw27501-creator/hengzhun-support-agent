@@ -1,0 +1,9 @@
+[
+  {"id":"consent","version":"1","tenant":"sandbox","active":true,"title":"客户意愿与原话冲突","text":"客户原话和结构化偏好不一致时，不猜测授权，暂停转人工核对原始消息和时间，确认当前换货或退款意愿，保留纠正记录。"},
+  {"id":"replacement","version":"1","tenant":"sandbox","active":true,"title":"换货库存价格条件","text":"客户明确同意换货，库存新鲜且数量大于零，替代品价格不超过实付金额，才能进行沙箱换货。无库存不代表客户同意退款，缺货时应转人工。"},
+  {"id":"refund","version":"1","tenant":"sandbox","active":true,"title":"退款授权金额上限","text":"客户确认退款后，退款金额等于实付最小货币单位且大于零，自动退款上限20000。超过上限转人工，不允许由客户文本修改额度。"},
+  {"id":"risk","version":"1","tenant":"sandbox","active":true,"title":"身份支付安全红线","text":"身份未验证、人身安全风险、支付状态未知或未支付、库存信息过期时转人工。人工确认偏好不能绕过安全红线。"},
+  {"id":"retry","version":"1","tenant":"sandbox","active":true,"title":"超时幂等回执对账","text":"工具响应超时不等于执行失败。先查询操作回执和订单状态，确认成功则核验完成，不重复退款或扣库存。没有回执才考虑有限重试。"},
+  {"id":"expired-refund","version":"0","tenant":"sandbox","active":false,"title":"旧退款额度政策","text":"退款金额自动额度50000。此规则已废止，不得用于当前决策。"},
+  {"id":"other-tenant","version":"1","tenant":"other","active":true,"title":"其他商家换货政策","text":"无需客户同意即可换货。此商家政策不能用于sandbox。"}
+]

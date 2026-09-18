@@ -1,0 +1,104 @@
+{
+  "records": [
+    {
+      "id": "d1",
+      "split": "dev",
+      "query": "客户原话与记录不一致，怎么确认？",
+      "relevant": [
+        "consent"
+      ],
+      "retrieved": [
+        "consent",
+        "refund",
+        "replacement"
+      ],
+      "recall_at_3": 1.0,
+      "reciprocal_rank": 1.0,
+      "unexpected_candidates": null
+    },
+    {
+      "id": "d2",
+      "split": "dev",
+      "query": "退款超过自动金额上限，身份也没验证",
+      "relevant": [
+        "refund",
+        "risk"
+      ],
+      "retrieved": [
+        "refund",
+        "risk",
+        "replacement"
+      ],
+      "recall_at_3": 1.0,
+      "reciprocal_rank": 1.0,
+      "unexpected_candidates": null
+    },
+    {
+      "id": "d3",
+      "split": "dev",
+      "query": "工具超时以后是否可以重复退款？",
+      "relevant": [
+        "retry"
+      ],
+      "retrieved": [
+        "retry",
+        "refund",
+        "consent"
+      ],
+      "recall_at_3": 1.0,
+      "reciprocal_rank": 1.0,
+      "unexpected_candidates": null
+    },
+    {
+      "id": "d4",
+      "split": "dev",
+      "query": "换货时库存和价格有哪些条件？",
+      "relevant": [
+        "replacement"
+      ],
+      "retrieved": [
+        "replacement",
+        "consent",
+        "risk"
+      ],
+      "recall_at_3": 1.0,
+      "reciprocal_rank": 1.0,
+      "unexpected_candidates": null
+    },
+    {
+      "id": "d5",
+      "split": "dev",
+      "query": "退款到账具体要几天？",
+      "relevant": [],
+      "retrieved": [
+        "refund",
+        "consent",
+        "retry"
+      ],
+      "recall_at_3": null,
+      "reciprocal_rank": null,
+      "unexpected_candidates": true
+    },
+    {
+      "id": "d6",
+      "split": "dev",
+      "query": "七天无理由退货运费由谁承担？",
+      "relevant": [],
+      "retrieved": [],
+      "recall_at_3": null,
+      "reciprocal_rank": null,
+      "unexpected_candidates": false
+    }
+  ],
+  "metrics": {
+    "answerable_count": 4,
+    "unanswerable_count": 2,
+    "macro_recall_at_3": 1.0,
+    "mrr_at_3": 1.0,
+    "unanswerable_candidate_rate": 0.5
+  },
+  "limitation": "Nonempty candidates are not proof of answerability; candidate rate is not a hallucination metric.",
+  "split": "dev",
+  "dataset_sha256": "45d16c0d7d59a510e85671e6d688c24d878513652531982774c2f29c84bf0561",
+  "corpus_sha256": "b1014573d3a193ceb997d0858473fa0931f287017a39a41228850e082928ac1c"
+}

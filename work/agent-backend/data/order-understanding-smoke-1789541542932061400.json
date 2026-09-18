@@ -1,0 +1,482 @@
+{
+  "passed": true,
+  "first": {
+    "id": "1ea5150e5c3b4815bf8bb193b4247062",
+    "event_id": "event-normal-fa345280f583",
+    "order_id": "normal-fa345280f583",
+    "state": "WAITING_HUMAN",
+    "attempts": 0,
+    "plan": null,
+    "created_at": "2026-09-16T06:52:19.801988+00:00",
+    "order": {
+      "id": "normal-fa345280f583",
+      "facts": {
+        "payment": "paid",
+        "paid_minor": 10000,
+        "stock": 2,
+        "price_minor": 9000,
+        "fresh_stock": true,
+        "identity_verified": true,
+        "safety_risk": false,
+        "sku": "ALT-A",
+        "confirmed_intent": null,
+        "preference_conflict": true,
+        "human_confirmed": false,
+        "customer_text": "我原本想申请退款，但现在先别操作，我再想想。",
+        "message_id": "pause",
+        "message_at": "2026-09-16T06:52:19.812102+00:00",
+        "accept_substitute": false,
+        "dialogue_version": 1,
+        "authorized_version": null
+      },
+      "status": "open",
+      "fail_mode": "none"
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:19.803197+00:00",
+        "event": "event.received",
+        "details": {
+          "order_id": "normal-fa345280f583",
+          "environment": "sandbox"
+        }
+      },
+      {
+        "seq": 2,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:19.812102+00:00",
+        "event": "consent.invalidated",
+        "details": {
+          "message_id": "pause",
+          "dialogue_version": 1,
+          "reason": "New sandbox customer message; review current intent before execution"
+        }
+      },
+      {
+        "seq": 3,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:21.321065+00:00",
+        "event": "understanding.attached",
+        "details": {
+          "version": 1,
+          "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v1",
+          "state": "REVIEW"
+        }
+      }
+    ],
+    "receipt": null,
+    "understanding": {
+      "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v1",
+      "version": 1,
+      "state": "REVIEW",
+      "result": {
+        "extraction": {
+          "intent": "get_refund",
+          "dialogue_state": "paused",
+          "question": "",
+          "evidence": [
+            {
+              "message_id": "pause",
+              "quote": "我原本想申请退款，但现在先别操作，我再想想。"
+            }
+          ],
+          "reason": "客户明确撤回操作并暂停，保留退款诉求主题。",
+          "needs_clarification": false
+        },
+        "valid": true,
+        "next_step": "hold",
+        "execution_authorized": false,
+        "prompt_version": "split-router-v1-candidate",
+        "prompt_sha256": "9d509bea70e0e2ba7dfefe72d4f89ee47170605d6768ceac201c6f6303a2bf27",
+        "model": "deepseek-flash",
+        "response_id": "9f1f97ce-0b0d-4e93-8aa4-38b7acf473c0",
+        "usage": {
+          "prompt_tokens": 507,
+          "completion_tokens": 59,
+          "total_tokens": 566,
+          "prompt_tokens_details": {
+            "cached_tokens": 256
+          },
+          "prompt_cache_hit_tokens": 256,
+          "prompt_cache_miss_tokens": 251
+        },
+        "raw_output": "{\"intent\":\"get_refund\",\"dialogue_state\":\"paused\",\"question\":\"\",\"evidence\":[{\"message_id\":\"pause\",\"quote\":\"我原本想申请退款，但现在先别操作，我再想想。\"}],\"reason\":\"客户明确撤回操作并暂停，保留退款诉求主题。\"}",
+        "latency_ms": 1281
+      }
+    }
+  },
+  "second": {
+    "id": "1ea5150e5c3b4815bf8bb193b4247062",
+    "event_id": "event-normal-fa345280f583",
+    "order_id": "normal-fa345280f583",
+    "state": "WAITING_HUMAN",
+    "attempts": 0,
+    "plan": null,
+    "created_at": "2026-09-16T06:52:19.801988+00:00",
+    "order": {
+      "id": "normal-fa345280f583",
+      "facts": {
+        "payment": "paid",
+        "paid_minor": 10000,
+        "stock": 2,
+        "price_minor": 9000,
+        "fresh_stock": true,
+        "identity_verified": true,
+        "safety_risk": false,
+        "sku": "ALT-A",
+        "confirmed_intent": null,
+        "preference_conflict": true,
+        "human_confirmed": false,
+        "customer_text": "我已经想好了，现在确认申请退款。",
+        "message_id": "resume",
+        "message_at": "2026-09-16T06:52:21.356055+00:00",
+        "accept_substitute": false,
+        "dialogue_version": 2,
+        "authorized_version": null
+      },
+      "status": "open",
+      "fail_mode": "none"
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:19.803197+00:00",
+        "event": "event.received",
+        "details": {
+          "order_id": "normal-fa345280f583",
+          "environment": "sandbox"
+        }
+      },
+      {
+        "seq": 2,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:19.812102+00:00",
+        "event": "consent.invalidated",
+        "details": {
+          "message_id": "pause",
+          "dialogue_version": 1,
+          "reason": "New sandbox customer message; review current intent before execution"
+        }
+      },
+      {
+        "seq": 3,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:21.321065+00:00",
+        "event": "understanding.attached",
+        "details": {
+          "version": 1,
+          "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v1",
+          "state": "REVIEW"
+        }
+      },
+      {
+        "seq": 4,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:21.356055+00:00",
+        "event": "consent.invalidated",
+        "details": {
+          "message_id": "resume",
+          "dialogue_version": 2,
+          "reason": "New sandbox customer message; review current intent before execution"
+        }
+      },
+      {
+        "seq": 5,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:22.852355+00:00",
+        "event": "understanding.attached",
+        "details": {
+          "version": 2,
+          "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v2",
+          "state": "REVIEW"
+        }
+      }
+    ],
+    "receipt": null,
+    "understanding": {
+      "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v2",
+      "version": 2,
+      "state": "REVIEW",
+      "result": {
+        "extraction": {
+          "intent": "get_refund",
+          "dialogue_state": "ready",
+          "question": "",
+          "evidence": [
+            {
+              "message_id": "pause",
+              "quote": "我原本想申请退款，但现在先别操作，我再想想。"
+            },
+            {
+              "message_id": "resume",
+              "quote": "我已经想好了，现在确认申请退款。"
+            }
+          ],
+          "reason": "客户先暂停退款操作，随后明确确认申请退款，诉求明确。",
+          "needs_clarification": false
+        },
+        "valid": true,
+        "next_step": "review_route",
+        "execution_authorized": false,
+        "prompt_version": "split-router-v1-candidate",
+        "prompt_sha256": "9d509bea70e0e2ba7dfefe72d4f89ee47170605d6768ceac201c6f6303a2bf27",
+        "model": "deepseek-flash",
+        "response_id": "d427c0d2-3213-4bf7-9e6f-e31897e5448b",
+        "usage": {
+          "prompt_tokens": 534,
+          "completion_tokens": 79,
+          "total_tokens": 613,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "prompt_cache_hit_tokens": 384,
+          "prompt_cache_miss_tokens": 150
+        },
+        "raw_output": "{\"intent\":\"get_refund\",\"dialogue_state\":\"ready\",\"question\":\"\",\"evidence\":[{\"message_id\":\"pause\",\"quote\":\"我原本想申请退款，但现在先别操作，我再想想。\"},{\"message_id\":\"resume\",\"quote\":\"我已经想好了，现在确认申请退款。\"}],\"reason\":\"客户先暂停退款操作，随后明确确认申请退款，诉求明确。\"}",
+        "latency_ms": 1297
+      }
+    }
+  },
+  "completed": {
+    "id": "1ea5150e5c3b4815bf8bb193b4247062",
+    "event_id": "event-normal-fa345280f583",
+    "order_id": "normal-fa345280f583",
+    "state": "COMPLETED",
+    "attempts": 1,
+    "plan": {
+      "action": "refund",
+      "amount_minor": 10000,
+      "sku": "",
+      "reason": "沙箱规则规划器；不是模型调用"
+    },
+    "created_at": "2026-09-16T06:52:19.801988+00:00",
+    "order": {
+      "id": "normal-fa345280f583",
+      "facts": {
+        "payment": "paid",
+        "paid_minor": 10000,
+        "stock": 2,
+        "price_minor": 9000,
+        "fresh_stock": true,
+        "identity_verified": true,
+        "safety_risk": false,
+        "sku": "ALT-A",
+        "confirmed_intent": "refund",
+        "preference_conflict": false,
+        "human_confirmed": true,
+        "customer_text": "我已经想好了，现在确认申请退款。",
+        "message_id": "resume",
+        "message_at": "2026-09-16T06:52:21.356055+00:00",
+        "accept_substitute": false,
+        "dialogue_version": 2,
+        "authorized_version": 2
+      },
+      "status": "refunded",
+      "fail_mode": "none"
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:19.803197+00:00",
+        "event": "event.received",
+        "details": {
+          "order_id": "normal-fa345280f583",
+          "environment": "sandbox"
+        }
+      },
+      {
+        "seq": 2,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:19.812102+00:00",
+        "event": "consent.invalidated",
+        "details": {
+          "message_id": "pause",
+          "dialogue_version": 1,
+          "reason": "New sandbox customer message; review current intent before execution"
+        }
+      },
+      {
+        "seq": 3,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:21.321065+00:00",
+        "event": "understanding.attached",
+        "details": {
+          "version": 1,
+          "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v1",
+          "state": "REVIEW"
+        }
+      },
+      {
+        "seq": 4,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:21.356055+00:00",
+        "event": "consent.invalidated",
+        "details": {
+          "message_id": "resume",
+          "dialogue_version": 2,
+          "reason": "New sandbox customer message; review current intent before execution"
+        }
+      },
+      {
+        "seq": 5,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:22.852355+00:00",
+        "event": "understanding.attached",
+        "details": {
+          "version": 2,
+          "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v2",
+          "state": "REVIEW"
+        }
+      },
+      {
+        "seq": 6,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:22.912101+00:00",
+        "event": "human.confirmed",
+        "details": {
+          "actor": "local-operator",
+          "source_message_id": "resume",
+          "note": "沙箱操作者核对最新原话",
+          "previous_intent": null,
+          "confirmed_intent": "refund",
+          "authorized_version": 2
+        }
+      },
+      {
+        "seq": 7,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:22.925430+00:00",
+        "event": "context.loaded",
+        "details": {
+          "facts": {
+            "payment": "paid",
+            "paid_minor": 10000,
+            "stock": 2,
+            "price_minor": 9000,
+            "fresh_stock": true,
+            "identity_verified": true,
+            "safety_risk": false,
+            "sku": "ALT-A",
+            "confirmed_intent": "refund",
+            "preference_conflict": false,
+            "human_confirmed": true,
+            "customer_text": "我已经想好了，现在确认申请退款。",
+            "message_id": "resume",
+            "message_at": "2026-09-16T06:52:21.356055+00:00",
+            "accept_substitute": false,
+            "dialogue_version": 2,
+            "authorized_version": 2
+          },
+          "policy_version": "sandbox-policy-1"
+        }
+      },
+      {
+        "seq": 8,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:22.925430+00:00",
+        "event": "planner.completed",
+        "details": {
+          "planner_version": "rule-fixture-1",
+          "prompt_sha256": null,
+          "latency_ms": 0,
+          "valid": true
+        }
+      },
+      {
+        "seq": 9,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:22.925430+00:00",
+        "event": "tool.executed",
+        "details": {
+          "tool": "sandbox.refund",
+          "receipt": {
+            "id": "d944fb61a07b4422b8890f1eee07c3fc",
+            "order_id": "normal-fa345280f583",
+            "action": "refund",
+            "amount_minor": 10000,
+            "sku": "",
+            "status": "refunded",
+            "sandbox": true
+          }
+        }
+      },
+      {
+        "seq": 10,
+        "task_id": "1ea5150e5c3b4815bf8bb193b4247062",
+        "at": "2026-09-16T06:52:22.925430+00:00",
+        "event": "result.verified",
+        "details": {
+          "verified": true,
+          "observed_status": "refunded"
+        }
+      }
+    ],
+    "receipt": {
+      "id": "d944fb61a07b4422b8890f1eee07c3fc",
+      "order_id": "normal-fa345280f583",
+      "action": "refund",
+      "amount_minor": 10000,
+      "sku": "",
+      "status": "refunded",
+      "sandbox": true
+    },
+    "understanding": {
+      "event_id": "task-1ea5150e5c3b4815bf8bb193b4247062-v2",
+      "version": 2,
+      "state": "REVIEW",
+      "result": {
+        "extraction": {
+          "intent": "get_refund",
+          "dialogue_state": "ready",
+          "question": "",
+          "evidence": [
+            {
+              "message_id": "pause",
+              "quote": "我原本想申请退款，但现在先别操作，我再想想。"
+            },
+            {
+              "message_id": "resume",
+              "quote": "我已经想好了，现在确认申请退款。"
+            }
+          ],
+          "reason": "客户先暂停退款操作，随后明确确认申请退款，诉求明确。",
+          "needs_clarification": false
+        },
+        "valid": true,
+        "next_step": "review_route",
+        "execution_authorized": false,
+        "prompt_version": "split-router-v1-candidate",
+        "prompt_sha256": "9d509bea70e0e2ba7dfefe72d4f89ee47170605d6768ceac201c6f6303a2bf27",
+        "model": "deepseek-flash",
+        "response_id": "d427c0d2-3213-4bf7-9e6f-e31897e5448b",
+        "usage": {
+          "prompt_tokens": 534,
+          "completion_tokens": 79,
+          "total_tokens": 613,
+          "prompt_tokens_details": {
+            "cached_tokens": 384
+          },
+          "prompt_cache_hit_tokens": 384,
+          "prompt_cache_miss_tokens": 150
+        },
+        "raw_output": "{\"intent\":\"get_refund\",\"dialogue_state\":\"ready\",\"question\":\"\",\"evidence\":[{\"message_id\":\"pause\",\"quote\":\"我原本想申请退款，但现在先别操作，我再想想。\"},{\"message_id\":\"resume\",\"quote\":\"我已经想好了，现在确认申请退款。\"}],\"reason\":\"客户先暂停退款操作，随后明确确认申请退款，诉求明确。\"}",
+        "latency_ms": 1297
+      }
+    }
+  },
+  "health": {
+    "enabled": true,
+    "worker_alive": true,
+    "paid_model": true,
+    "reserved_calls": 2,
+    "max_calls": 2,
+    "remaining_calls": 0,
+    "dialogue_router": "split",
+    "planner": "rag-deepseek-poc-v2"
+  },
+  "execution_planner": "rule-fixture-1"
+}

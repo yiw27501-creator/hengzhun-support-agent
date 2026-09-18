@@ -1,0 +1,86 @@
+{
+  "live": true,
+  "http_accepted": 202,
+  "result": {
+    "id": "smoke-event",
+    "messages": [
+      {
+        "id": "m1",
+        "role": "customer",
+        "text": "暂时别退款，我还没想好。"
+      }
+    ],
+    "digest": "a07532a403d33f2da0d546a3a2bf6bdbdf96b1c441a66a83796ab617a30e0e8e",
+    "status": "NEEDS_CLARIFICATION",
+    "result": {
+      "extraction": {
+        "intent": "undecided",
+        "needs_clarification": true,
+        "question": "您目前是希望继续保留订单，还是之后可能考虑换货或其他处理方式？",
+        "evidence": [
+          {
+            "message_id": "m1",
+            "quote": "暂时别退款，我还没想好。"
+          }
+        ],
+        "reason": "客户明确暂停退款并表示尚未想好，当前没有确定诉求，需要澄清后续意向。"
+      },
+      "valid": true,
+      "execution_authorized": false,
+      "next_step": "review_or_clarify",
+      "model": "deepseek-flash",
+      "response_id": "4c08c6fd-5870-4bcb-878b-c83c39a0b228",
+      "usage": {
+        "prompt_tokens": 410,
+        "completion_tokens": 81,
+        "total_tokens": 491,
+        "prompt_tokens_details": {
+          "cached_tokens": 256
+        },
+        "prompt_cache_hit_tokens": 256,
+        "prompt_cache_miss_tokens": 154
+      },
+      "latency_ms": 1438,
+      "prompt_version": "v3",
+      "prompt_sha256": "1c465a422e29106564a855092ed1105d644bd1dff6b5a1c6f471a1d73e4723f5"
+    },
+    "created_at": 1789477377.2815835,
+    "audit": [
+      {
+        "seq": 1,
+        "submission_id": "smoke-event",
+        "event": "dialogue.received",
+        "at": 1789477377.2815835,
+        "details": "{}"
+      },
+      {
+        "seq": 2,
+        "submission_id": "smoke-event",
+        "event": "dialogue.understood",
+        "at": 1789477379.2706325,
+        "details": "{\"valid\": true, \"prompt_sha256\": \"1c465a422e29106564a855092ed1105d644bd1dff6b5a1c6f471a1d73e4723f5\"}"
+      }
+    ],
+    "job": {
+      "id": "smoke-event",
+      "task_id": "smoke-event",
+      "status": "DONE",
+      "attempts": 1,
+      "lease_until": 1789477437.8173792,
+      "available_at": 1789477377.2815835,
+      "created_at": 1789477377.2815835,
+      "ended_at": 1789477379.2685301,
+      "error_type": null
+    },
+    "execution_authorized": false
+  },
+  "budget": {
+    "enabled": true,
+    "worker_alive": true,
+    "paid_model": true,
+    "reserved_calls": 1,
+    "max_calls": 1,
+    "remaining_calls": 0,
+    "planner": "rag-deepseek-poc-v2"
+  }
+}

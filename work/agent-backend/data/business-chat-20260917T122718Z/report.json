@@ -1,0 +1,89 @@
+{
+  "scope": "real DeepSeek routing; simulated read tools; explicit customer option; rule sandbox execution",
+  "passed": true,
+  "inventory": {
+    "status": "DONE",
+    "text": "页面说库存不足，请先帮我查一下库存，不要直接退款。",
+    "expected_version": 1,
+    "version": 2,
+    "result": {
+      "decision": {
+        "tool": "inventory",
+        "quote": "页面说库存不足，请先帮我查一下库存"
+      },
+      "model": "deepseek-flash",
+      "response_id": "4ca13cc3-cd27-499b-9459-86df8daf3923",
+      "usage": {
+        "prompt_tokens": 249,
+        "completion_tokens": 23,
+        "total_tokens": 272,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 249
+      },
+      "latency_ms": 828,
+      "prompt_sha256": "07d3b78c49a50a73e0c87112549f67d07da2f27467bf900fd58fab83f70d48eb"
+    },
+    "error_type": null,
+    "tool_result": {
+      "provider": "simulated-inventory",
+      "sku": "ALT-A",
+      "stock": 3,
+      "price_minor": 18900,
+      "checked_at": "2026-09-17T12:27:19.956392+00:00"
+    },
+    "reply": "已调用模拟库存工具：ALT-A 有 3 件，价格 ¥189。尚未换货，请确认方案。"
+  },
+  "pause": {
+    "status": "DONE",
+    "text": "刚才说可以换，现在先不要处理，我再想想。",
+    "expected_version": 2,
+    "version": 3,
+    "result": {
+      "decision": {
+        "tool": "pause",
+        "quote": "现在先不要处理，我再想想。"
+      },
+      "model": "deepseek-flash",
+      "response_id": "060e9589-fa9e-4a92-b38f-f735b23ab2aa",
+      "usage": {
+        "prompt_tokens": 273,
+        "completion_tokens": 19,
+        "total_tokens": 292,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        },
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 145
+      },
+      "latency_ms": 609,
+      "prompt_sha256": "07d3b78c49a50a73e0c87112549f67d07da2f27467bf900fd58fab83f70d48eb"
+    },
+    "error_type": null,
+    "tool_result": {},
+    "reply": "好的，已暂停，旧授权已撤销。你确认前不会办理。"
+  },
+  "receipt": {
+    "id": "eb6cb177815d47b4bee2d7a43f1f27ce",
+    "order_id": "HZ-4098CD5C",
+    "action": "replace",
+    "amount_minor": 0,
+    "sku": "ALT-A",
+    "status": "replaced",
+    "sandbox": true
+  },
+  "task_id": "4098cd5c6cbc46e5be6f0372bbedb6c8",
+  "budget": {
+    "enabled": true,
+    "worker_alive": true,
+    "paid_model": false,
+    "reserved_calls": 2,
+    "max_calls": 2,
+    "remaining_calls": 0,
+    "dialogue_router": "legacy",
+    "worker_errors": {},
+    "planner": "rule-fixture-1"
+  }
+}

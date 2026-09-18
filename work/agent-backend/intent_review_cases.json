@@ -1,0 +1,8 @@
+{
+  "status": "needs_review",
+  "reviewer": "AI-assisted preliminary review; no business annotator adjudication",
+  "cases": [
+    {"question":"I expect a compensation of $3","original_label":"track_refund","reason":"No explicit existing refund or status query; compensation request may be complaint. Context is missing.","adjudicated_label":null},
+    {"question":"I expect a refund of 1499 dollars","original_label":"track_refund","reason":"No evidence of an existing refund; may be a new request. Context is missing.","adjudicated_label":null}
+  ]
+}

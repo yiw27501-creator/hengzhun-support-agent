@@ -1,0 +1,169 @@
+{
+  "split": "dev",
+  "dataset_sha256": "9d197da38fd460c21c8d67c6f9fd00188a6851a46c5e02fe8088d1d00d65215a",
+  "records": [
+    {
+      "case": {
+        "id": "dev-change",
+        "split": "dev",
+        "messages": [
+          {
+            "id": "m1",
+            "role": "customer",
+            "text": "没货就退款吧。"
+          },
+          {
+            "id": "m2",
+            "role": "agent",
+            "text": "同档还有一台，可以换货。"
+          },
+          {
+            "id": "m3",
+            "role": "customer",
+            "text": "那不用退款了，给我换同档那台。"
+          }
+        ],
+        "expected": "replace",
+        "evidence_id": "m3"
+      },
+      "output": {
+        "extraction": {
+          "intent": "replace",
+          "needs_clarification": false,
+          "question": "",
+          "evidence": [
+            {
+              "message_id": "m3",
+              "quote": "那不用退款了，给我换同档那台。"
+            }
+          ],
+          "reason": "客户先提出退款，随后明确撤回退款并改为换同档商品，当前需求为换货。"
+        },
+        "valid": true,
+        "execution_authorized": false,
+        "next_step": "review_or_clarify",
+        "model": "deepseek-flash",
+        "response_id": "effad82d-340e-4385-bac0-003029d166e2",
+        "usage": {
+          "prompt_tokens": 349,
+          "completion_tokens": 67,
+          "total_tokens": 416,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 349
+        },
+        "latency_ms": 1235,
+        "prompt_sha256": "c5aa54f3f3cb88aa1a32f2b90629f5e01690d0defe146673138472d7723be333"
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "dev-conditional",
+        "split": "dev",
+        "messages": [
+          {
+            "id": "m1",
+            "role": "customer",
+            "text": "如果明天能到就换，不行再说。"
+          },
+          {
+            "id": "m2",
+            "role": "agent",
+            "text": "我还需要核实到货时间。"
+          }
+        ],
+        "expected": "undecided",
+        "evidence_id": "m1"
+      },
+      "output": {
+        "extraction": {
+          "intent": "undecided",
+          "needs_clarification": true,
+          "question": "请问您希望优先确认明天能否到货，还是如果明天到不了就改为退款？",
+          "evidence": [
+            {
+              "message_id": "m1",
+              "quote": "如果明天能到就换，不行再说。"
+            }
+          ],
+          "reason": "客户以条件式表达提出换货，但未明确明天不能到货时的最终诉求，当前需求不明确。"
+        },
+        "valid": true,
+        "execution_authorized": false,
+        "next_step": "review_or_clarify",
+        "model": "deepseek-flash",
+        "response_id": "c444be34-8c30-486b-9644-b424eb698d2f",
+        "usage": {
+          "prompt_tokens": 321,
+          "completion_tokens": 89,
+          "total_tokens": 410,
+          "prompt_tokens_details": {
+            "cached_tokens": 128
+          },
+          "prompt_cache_hit_tokens": 128,
+          "prompt_cache_miss_tokens": 193
+        },
+        "latency_ms": 1078,
+        "prompt_sha256": "c5aa54f3f3cb88aa1a32f2b90629f5e01690d0defe146673138472d7723be333"
+      },
+      "passed": true
+    },
+    {
+      "case": {
+        "id": "dev-proposal",
+        "split": "dev",
+        "messages": [
+          {
+            "id": "m1",
+            "role": "customer",
+            "text": "这个订单现在怎么处理？"
+          },
+          {
+            "id": "m2",
+            "role": "agent",
+            "text": "给您退款可以吗？"
+          }
+        ],
+        "expected": "undecided",
+        "evidence_id": "m1"
+      },
+      "output": {
+        "extraction": {
+          "intent": "undecided",
+          "needs_clarification": true,
+          "question": "您希望这个订单如何处理：换货还是退款？",
+          "evidence": [
+            {
+              "message_id": "m1",
+              "quote": "这个订单现在怎么处理？"
+            }
+          ],
+          "reason": "客户仅询问订单处理方式，未明确表达换货或退款；客服提议退款不代表客户同意，因此需求不明确。"
+        },
+        "valid": true,
+        "execution_authorized": false,
+        "next_step": "review_or_clarify",
+        "model": "deepseek-flash",
+        "response_id": "ff1cb146-0ea2-48c8-a18f-cffde021f564",
+        "usage": {
+          "prompt_tokens": 316,
+          "completion_tokens": 79,
+          "total_tokens": 395,
+          "prompt_tokens_details": {
+            "cached_tokens": 128
+          },
+          "prompt_cache_hit_tokens": 128,
+          "prompt_cache_miss_tokens": 188
+        },
+        "latency_ms": 1328,
+        "prompt_sha256": "c5aa54f3f3cb88aa1a32f2b90629f5e01690d0defe146673138472d7723be333"
+      },
+      "passed": true
+    }
+  ],
+  "passed": 3,
+  "attempted": 3
+}

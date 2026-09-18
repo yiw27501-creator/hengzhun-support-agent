@@ -1,0 +1,28 @@
+{
+  "purpose": "Public reference registry; not executable merchant policy or legal advice",
+  "execution_enabled": false,
+  "sources": [
+    {
+      "id": "jd-self-operated-seven-day",
+      "url": "https://help.jd.com/user/issue/327-3886.html",
+      "title": "7天无理由退货规则说明（自营）",
+      "reviewed_at": "2026-09-15",
+      "effective_version": "unknown",
+      "scope": "京东自营、标识适用的商品，须另查商品详情与品类条件",
+      "summary": "涉及签收后的申请期限、商品完好程度、退货运费及商品详情页条件。不能据此推导所有商家都支持自动退款。",
+      "limitations": "本轮只核对网页正文，未完整核对图片中的品类表；未导入执行知识库。",
+      "status": "research_only"
+    },
+    {
+      "id": "samr-seven-day-reference",
+      "url": "https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/fgs/art/2023/art_26ca8fe29e184edd899fa0a7a060d935.html",
+      "title": "网络购买商品七日无理由退货暂行办法",
+      "reviewed_at": "2026-09-15",
+      "effective_version": "requires_current_version_verification",
+      "scope": "网络消费退货规则研究，不作为沙箱退款授权",
+      "summary": "规则涉及适用消费场景、例外商品、购买时确认及商品完好条件；需区分消费者诉求、政策适用性与执行授权。",
+      "limitations": "页面日期与法规发布实施日期不同，尚未校验现行整合版本。",
+      "status": "research_only"
+    }
+  ]
+}

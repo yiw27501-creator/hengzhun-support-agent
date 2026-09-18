@@ -1,0 +1,179 @@
+{
+  "live": true,
+  "accepted_http_status": 202,
+  "job": {
+    "id": "2992f90a14e146b69433460cefdfd0e5",
+    "task_id": "9ef67a72f9884279a552b0e535e45f05",
+    "status": "DONE",
+    "attempts": 1,
+    "lease_until": 1789460667.0076625,
+    "available_at": 1789460608.060446,
+    "created_at": 1789460606.8197381,
+    "ended_at": 1789460607.9604461,
+    "error_type": null
+  },
+  "task": {
+    "id": "9ef67a72f9884279a552b0e535e45f05",
+    "event_id": "event-normal-0f5616ca2928",
+    "order_id": "normal-0f5616ca2928",
+    "state": "COMPLETED",
+    "attempts": 1,
+    "plan": {
+      "action": "replace",
+      "amount_minor": 0,
+      "sku": "ALT-A",
+      "reason": "客户已确认换货，库存充足且替代品价格未超实付"
+    },
+    "created_at": "2026-09-15T08:23:26.811509+00:00",
+    "order": {
+      "id": "normal-0f5616ca2928",
+      "facts": {
+        "payment": "paid",
+        "paid_minor": 10000,
+        "stock": 1,
+        "price_minor": 9000,
+        "fresh_stock": true,
+        "identity_verified": true,
+        "safety_risk": false,
+        "sku": "ALT-A",
+        "confirmed_intent": "replace",
+        "preference_conflict": false,
+        "human_confirmed": false,
+        "customer_text": "可以换同档商品",
+        "message_id": "message-normal-0f5616ca2928",
+        "message_at": "2026-09-15T08:23:26.806104+00:00",
+        "accept_substitute": true
+      },
+      "status": "replaced",
+      "fail_mode": "none"
+    },
+    "trace": [
+      {
+        "seq": 1,
+        "task_id": "9ef67a72f9884279a552b0e535e45f05",
+        "at": "2026-09-15T08:23:26.812598+00:00",
+        "event": "event.received",
+        "details": {
+          "order_id": "normal-0f5616ca2928",
+          "environment": "sandbox"
+        }
+      },
+      {
+        "seq": 2,
+        "task_id": "9ef67a72f9884279a552b0e535e45f05",
+        "at": "2026-09-15T08:23:27.016629+00:00",
+        "event": "context.loaded",
+        "details": {
+          "facts": {
+            "payment": "paid",
+            "paid_minor": 10000,
+            "stock": 2,
+            "price_minor": 9000,
+            "fresh_stock": true,
+            "identity_verified": true,
+            "safety_risk": false,
+            "sku": "ALT-A",
+            "confirmed_intent": "replace",
+            "preference_conflict": false,
+            "human_confirmed": false,
+            "customer_text": "可以换同档商品",
+            "message_id": "message-normal-0f5616ca2928",
+            "message_at": "2026-09-15T08:23:26.806104+00:00",
+            "accept_substitute": true
+          },
+          "policy_version": "sandbox-policy-1"
+        }
+      },
+      {
+        "seq": 3,
+        "task_id": "9ef67a72f9884279a552b0e535e45f05",
+        "at": "2026-09-15T08:23:27.953027+00:00",
+        "event": "model.observed",
+        "details": {
+          "retrieval_ids": [
+            "replacement",
+            "consent",
+            "risk"
+          ],
+          "corpus_hash": "b1014573d3a193ceb997d0858473fa0931f287017a39a41228850e082928ac1c",
+          "prompt_sha256": "ae9ec8d02497f14c853e8b20eea4609a85239908079a8366a94bd13587938f36",
+          "prompt_version": "rag-deepseek-poc-v2",
+          "model_requested": "deepseek-flash",
+          "model_returned": "deepseek-flash",
+          "response_id": "940aa98c-29f9-4092-b251-0af31fde0c1a",
+          "usage": {
+            "prompt_tokens": 704,
+            "completion_tokens": 42,
+            "total_tokens": 746,
+            "prompt_tokens_details": {
+              "cached_tokens": 256
+            },
+            "prompt_cache_hit_tokens": 256,
+            "prompt_cache_miss_tokens": 448
+          },
+          "status": "response",
+          "latency_ms": 937
+        }
+      },
+      {
+        "seq": 4,
+        "task_id": "9ef67a72f9884279a552b0e535e45f05",
+        "at": "2026-09-15T08:23:27.953027+00:00",
+        "event": "planner.completed",
+        "details": {
+          "planner_version": "rag-deepseek-poc-v2",
+          "prompt_sha256": null,
+          "latency_ms": 937,
+          "valid": true
+        }
+      },
+      {
+        "seq": 5,
+        "task_id": "9ef67a72f9884279a552b0e535e45f05",
+        "at": "2026-09-15T08:23:27.954096+00:00",
+        "event": "tool.executed",
+        "details": {
+          "tool": "sandbox.replace",
+          "receipt": {
+            "id": "650a36c862e148b3b3b4ad158b510357",
+            "order_id": "normal-0f5616ca2928",
+            "action": "replace",
+            "amount_minor": 0,
+            "sku": "ALT-A",
+            "status": "replaced",
+            "sandbox": true
+          }
+        }
+      },
+      {
+        "seq": 6,
+        "task_id": "9ef67a72f9884279a552b0e535e45f05",
+        "at": "2026-09-15T08:23:27.954096+00:00",
+        "event": "result.verified",
+        "details": {
+          "verified": true,
+          "observed_status": "replaced"
+        }
+      }
+    ],
+    "receipt": {
+      "id": "650a36c862e148b3b3b4ad158b510357",
+      "order_id": "normal-0f5616ca2928",
+      "action": "replace",
+      "amount_minor": 0,
+      "sku": "ALT-A",
+      "status": "replaced",
+      "sandbox": true
+    }
+  },
+  "budget": {
+    "enabled": true,
+    "worker_alive": true,
+    "paid_model": true,
+    "reserved_calls": 1,
+    "max_calls": 1,
+    "remaining_calls": 0,
+    "planner": "rag-deepseek-poc-v2"
+  },
+  "passed": true
+}

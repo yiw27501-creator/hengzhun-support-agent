@@ -1,0 +1,817 @@
+{
+  "manifest_sha256": "c8d525e5d9cd7d3418723a1e1c7e0eeb5ae3349026351968fafac4df40b94707",
+  "records": [
+    {
+      "id": "d6b7766b2af9c8893ae227add6e3ae03a6a7c1016d0b8f4bd1dd907406a20b08",
+      "question": "i do not know how to cancel purchase 00123842",
+      "expected": "cancel_order",
+      "correct": true,
+      "request_sha256": "cbba8dd337793c609011b2e087dbb4a3c7cab54340d9e16cf5f4d2e50ef33b30",
+      "started_at": "2026-09-16T04:46:43.157618+00:00",
+      "response_id": "879e405b-6fc7-4dce-8150-c5e424cccb2c",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 213,
+        "completion_tokens": 8,
+        "total_tokens": 221,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 213
+      },
+      "raw_output": "{\"intent\": \"cancel_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "cancel_order",
+      "latency_ms": 750
+    },
+    {
+      "id": "b402be838d7e0394a9c37153ab417a9bf777220ece725124f1c9831a585ddaa7",
+      "question": "i dont want the last damn purchase i made can i cancel it",
+      "expected": "cancel_order",
+      "correct": true,
+      "request_sha256": "6c6c379df6eca3927a56c31f7c17724bca5812dcdd93c13c626d8acdc3eb6e57",
+      "started_at": "2026-09-16T04:46:43.907123+00:00",
+      "response_id": "4b7236f2-e118-48cc-98ed-bc5a1a87ccd6",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 8,
+        "total_tokens": 222,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 214
+      },
+      "raw_output": "{\"intent\": \"cancel_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "cancel_order",
+      "latency_ms": 641
+    },
+    {
+      "id": "573ecc3d0871c51514cc8d864e61bf0b83958078c222252d713f05206aead3b2",
+      "question": "i have problems with canceling order 00123842",
+      "expected": "cancel_order",
+      "correct": true,
+      "request_sha256": "39156d91973521df0b534f74a7b6df378b653b27b46eea64d068cd450e8e4bc8",
+      "started_at": "2026-09-16T04:46:44.552224+00:00",
+      "response_id": "828ee929-5b24-4cdc-b0fe-0c8ef6561858",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 212,
+        "completion_tokens": 8,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 212
+      },
+      "raw_output": "{\"intent\": \"cancel_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "cancel_order",
+      "latency_ms": 1000
+    },
+    {
+      "id": "a7ab1fd40c41a6efc855d136f0b1c2870367e586fa6a94e07620ec2fa598aaa2",
+      "question": "order cancellation",
+      "expected": "cancel_order",
+      "correct": true,
+      "request_sha256": "6dd038f3fc649d1008aa4a19f594a525921979bd59d5088e892b79d266e5e237",
+      "started_at": "2026-09-16T04:46:45.544792+00:00",
+      "response_id": "7c77d1e4-a6c4-4736-9fb7-b2e102f576be",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 203,
+        "completion_tokens": 8,
+        "total_tokens": 211,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 203
+      },
+      "raw_output": "{\"intent\": \"cancel_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "cancel_order",
+      "latency_ms": 734
+    },
+    {
+      "id": "6dda9b250b265ba29439e7eac88b00beaa6ecb93b2dc738a3fe8c9bdba1014df",
+      "question": "need assistance to cancel purchase 00123842",
+      "expected": "cancel_order",
+      "correct": true,
+      "request_sha256": "7a28b364f641c12c9142885b604a5e0308c8cb0aae4b77fc68dcce1366fc4f9c",
+      "started_at": "2026-09-16T04:46:46.290920+00:00",
+      "response_id": "7b3bc79e-b135-4e58-a4b3-921b87c17f3d",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 210,
+        "completion_tokens": 8,
+        "total_tokens": 218,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 210
+      },
+      "raw_output": "{\"intent\": \"cancel_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "cancel_order",
+      "latency_ms": 594
+    },
+    {
+      "id": "1021c956d648084468788cc094fd4fa520adc63516915135b3c03205ad36dc86",
+      "question": "tracking order",
+      "expected": "track_order",
+      "correct": true,
+      "request_sha256": "0d2fcd1716f95a3ac4bd331b3e0139504a82c88b69ee42109950bb64266d33ea",
+      "started_at": "2026-09-16T04:46:46.880249+00:00",
+      "response_id": "85f5cc04-937e-46a5-8359-47164e4d1436",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 204,
+        "completion_tokens": 8,
+        "total_tokens": 212,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 204
+      },
+      "raw_output": "{\"intent\": \"track_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_order",
+      "latency_ms": 609
+    },
+    {
+      "id": "1e16ec7d4f282d5c6a1722288fa19b8d8e3e9f708e31a521eed30790a6bec7df",
+      "question": "check order 00123842 current status",
+      "expected": "track_order",
+      "correct": true,
+      "request_sha256": "bccf849909eb8573aa416ff0afe50c964a8b6b545466969bec6fcd16694e31f8",
+      "started_at": "2026-09-16T04:46:47.491719+00:00",
+      "response_id": "b0024896-3e0e-49fd-aa57-a2cc6b034bc6",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 8,
+        "total_tokens": 217,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 209
+      },
+      "raw_output": "{\"intent\": \"track_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_order",
+      "latency_ms": 922
+    },
+    {
+      "id": "b02afdd0000234aff235e24e11e382844488eca436075fcd7d0b8658264de4a5",
+      "question": "i need help to check the ETA of order 00123842",
+      "expected": "track_order",
+      "correct": true,
+      "request_sha256": "916c239a06551e6d5fe8e688cc8a32dd978e9d86256c69f11d5b0359815e2f75",
+      "started_at": "2026-09-16T04:46:48.413064+00:00",
+      "response_id": "441d5488-5deb-46d1-a024-ba25fdacf3e7",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 8,
+        "total_tokens": 223,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 215
+      },
+      "raw_output": "{\"intent\": \"track_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_order",
+      "latency_ms": 828
+    },
+    {
+      "id": "ba6e42519439c67cf3ec36ca98a7f389941bc3ee98925aa91203fa5366876484",
+      "question": "I have ggot to see the ETA of the order 00123842, help me",
+      "expected": "track_order",
+      "correct": true,
+      "request_sha256": "0abc32d42878ae2e4bf5c3bb259a98990f86e66b932d14f47f6259174d93d079",
+      "started_at": "2026-09-16T04:46:49.233749+00:00",
+      "response_id": "7bc32c28-fcdc-4592-8a02-f0961610afcc",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 220,
+        "completion_tokens": 8,
+        "total_tokens": 228,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 220
+      },
+      "raw_output": "{\"intent\": \"track_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_order",
+      "latency_ms": 860
+    },
+    {
+      "id": "70762f2817d9dec4c3d3b08012924eda29d261ec233c21eaf3c4ffc223ee7b9e",
+      "question": "need to see the eta of purchase 00123842",
+      "expected": "track_order",
+      "correct": true,
+      "request_sha256": "84f964a951d30da02d51802dfccf5bd56fda84d6dc02804e37c5da14af079296",
+      "started_at": "2026-09-16T04:46:50.091724+00:00",
+      "response_id": "a3ef9856-4fc4-4e6f-9bf2-e54cdc5773c8",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 212,
+        "completion_tokens": 8,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 212
+      },
+      "raw_output": "{\"intent\": \"track_order\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_order",
+      "latency_ms": 765
+    },
+    {
+      "id": "6ca564c3ec76e21ebdde71f5c8cb0a26318735c22830b5a4d069b383c66bd3b5",
+      "question": "i want help seeing how long it takes for the order to arrive",
+      "expected": "delivery_period",
+      "correct": true,
+      "request_sha256": "eb6848ff9c8563f7ace1f0c5e2edc20f794acbb7ec4309a6b88a4a0cdf3467c7",
+      "started_at": "2026-09-16T04:46:50.869443+00:00",
+      "response_id": "cab4764d-8358-455f-81b3-6e32f2b4c3fb",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 10,
+        "total_tokens": 224,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 214
+      },
+      "raw_output": "{\"intent\": \"delivery_period\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "delivery_period",
+      "latency_ms": 641
+    },
+    {
+      "id": "d8490454bc8152243976948f91308daa23774e5df3fa5d3166db7b013f15041d",
+      "question": "where can i chcek how long it takes for my parcel to arrive",
+      "expected": "delivery_period",
+      "correct": true,
+      "request_sha256": "8e44d602745909efd65d1bc8bfe6f6ff436baf1125f74403d013b2ce6fb067e1",
+      "started_at": "2026-09-16T04:46:51.511367+00:00",
+      "response_id": "f34b2761-acff-4173-8cde-85068bac8da1",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 10,
+        "total_tokens": 225,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 215
+      },
+      "raw_output": "{\"intent\": \"delivery_period\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "delivery_period",
+      "latency_ms": 578
+    },
+    {
+      "id": "73009ce7d57023c76eb6b111b81dd11b65de0ef13945aef00a6d66d05ed12bb5",
+      "question": "I would like to check when my product is going to arrive",
+      "expected": "delivery_period",
+      "correct": true,
+      "request_sha256": "3bcee72d064e5154bb3046e288827426414287e88d90e3f1a2e48e7cdd5b55f1",
+      "started_at": "2026-09-16T04:46:52.100761+00:00",
+      "response_id": "7058b86c-d426-4552-8fa7-65c20c80fa0b",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 213,
+        "completion_tokens": 10,
+        "total_tokens": 223,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 213
+      },
+      "raw_output": "{\"intent\": \"delivery_period\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "delivery_period",
+      "latency_ms": 609
+    },
+    {
+      "id": "41ada48e529a842fda30bf214105bb4cce16b076ef947d4a140bfd6f98f6833c",
+      "question": "how to check when will my product arrive?",
+      "expected": "delivery_period",
+      "correct": true,
+      "request_sha256": "c0caf8050cd64806d30adb22b2eb3e338f167b10a8b53062ed9c6b155ffec4bd",
+      "started_at": "2026-09-16T04:46:52.714679+00:00",
+      "response_id": "d59ee6ce-ed52-407b-85db-eadb5e7b1f37",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 210,
+        "completion_tokens": 10,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 210
+      },
+      "raw_output": "{\"intent\": \"delivery_period\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "delivery_period",
+      "latency_ms": 843
+    },
+    {
+      "id": "6c9019e3dc4ee0bfcb6beaf54c72657564899dc9322f7349a0307d25f08819c1",
+      "question": "I have to see how long it takes for the package to arrive",
+      "expected": "delivery_period",
+      "correct": true,
+      "request_sha256": "4ac13925d12feaf6103d8e4a6d91cdc3014dac8e9911f09e5e39344d44a3925f",
+      "started_at": "2026-09-16T04:46:53.564517+00:00",
+      "response_id": "a08bece6-23b8-4720-899b-a0869e92092f",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 10,
+        "total_tokens": 224,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 214
+      },
+      "raw_output": "{\"intent\": \"delivery_period\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "delivery_period",
+      "latency_ms": 688
+    },
+    {
+      "id": "0ecd57bc21c0395463923a24988b4ec7d142eccbf7894713ee5a6025fc90b931",
+      "question": "i want help requesting a refund of money",
+      "expected": "get_refund",
+      "correct": true,
+      "request_sha256": "6d0af84655b09dfc6bfa6664bf740f173b8184496fc42e2d1af800621bab13c1",
+      "started_at": "2026-09-16T04:46:54.249475+00:00",
+      "response_id": "7dd072c8-0bfd-4b2d-a66e-d3dc17373283",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 9,
+        "total_tokens": 218,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 209
+      },
+      "raw_output": "{\"intent\": \"get_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "get_refund",
+      "latency_ms": 828
+    },
+    {
+      "id": "a8c5b2c61436d4d525309a8421c6d09ec8033d0c415dad6e2e7d17e302f7b899",
+      "question": "need assistance asking for refunds",
+      "expected": "get_refund",
+      "correct": true,
+      "request_sha256": "3a1b1623493d18a1be9635a164d7fb3b8f8c7c796d5179c2f247449c500e3c88",
+      "started_at": "2026-09-16T04:46:55.081235+00:00",
+      "response_id": "70c87088-83fb-4435-afe4-c1e0c71865fc",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 207,
+        "completion_tokens": 9,
+        "total_tokens": 216,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 207
+      },
+      "raw_output": "{\"intent\": \"get_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "get_refund",
+      "latency_ms": 1031
+    },
+    {
+      "id": "eade70d05463517ac9c5083614e56f17a4f35aaf4b09d3e0ca2793184706a07e",
+      "question": "I do not know whta to do to obtain compensations of my money",
+      "expected": "get_refund",
+      "correct": true,
+      "request_sha256": "2c8fbcad459151c9a4b3193ab18a6e1c5a5d6d24375870308ae2e3935bd78e34",
+      "started_at": "2026-09-16T04:46:56.115388+00:00",
+      "response_id": "b7f8d3ff-10d3-41e4-85c7-ec9f4f7d560b",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 216,
+        "completion_tokens": 9,
+        "total_tokens": 225,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 216
+      },
+      "raw_output": "{\"intent\": \"get_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "get_refund",
+      "latency_ms": 813
+    },
+    {
+      "id": "e90d41a22e8507e259aa1f3b6dcbb2e6a7ed3743334c08f6410eb9d6a51cf5d6",
+      "question": "reimbursing 1200 dollars",
+      "expected": "get_refund",
+      "correct": true,
+      "request_sha256": "c50093e523edba55d7af8a789765e6ca2a6a668bd0edafcc0541bdc52f49e7bc",
+      "started_at": "2026-09-16T04:46:56.921738+00:00",
+      "response_id": "ae58f95c-542a-47cb-9308-ee5405e6ddd3",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 208,
+        "completion_tokens": 9,
+        "total_tokens": 217,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 208
+      },
+      "raw_output": "{\"intent\": \"get_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "get_refund",
+      "latency_ms": 719
+    },
+    {
+      "id": "822da3bcf0f6c88bd6bb1fe04a5b13e34cd8325fab77394f4e934ca4af141592",
+      "question": "getting refund",
+      "expected": "get_refund",
+      "correct": true,
+      "request_sha256": "307c042920ee9de6f41c8d5964c6692b9b0397675abdfa851bf66fcb87c1f6ac",
+      "started_at": "2026-09-16T04:46:57.649932+00:00",
+      "response_id": "392bc461-f755-4491-8b8a-7be83ef58c90",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 203,
+        "completion_tokens": 9,
+        "total_tokens": 212,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 203
+      },
+      "raw_output": "{\"intent\": \"get_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "get_refund",
+      "latency_ms": 531
+    },
+    {
+      "id": "e7942ff07eaa65e1130f5b2524775f3a1a69689c8bf774c6670c5f9eac8775c0",
+      "question": "could I see in what situations can I ask for my money back?",
+      "expected": "check_refund_policy",
+      "correct": true,
+      "request_sha256": "28fc7c663f4ad83a1782ac3d5319fe3fa09c4aacfdae2f98859149c125b2eb60",
+      "started_at": "2026-09-16T04:46:58.169067+00:00",
+      "response_id": "e3dd2779-49ef-4bb1-90b6-e855c0f2542b",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 11,
+        "total_tokens": 226,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 215
+      },
+      "raw_output": "{\"intent\": \"check_refund_policy\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "check_refund_policy",
+      "latency_ms": 703
+    },
+    {
+      "id": "906c319b2d3d3d60507451f7a3a8fd2f01714cbf56470ee5dace961a70a58ac3",
+      "question": "i have to check in which cases can i ask to be refunded",
+      "expected": "check_refund_policy",
+      "correct": true,
+      "request_sha256": "ce6064cab94a3970b3c7db857008ace70e75899abb3d9d833873d1468449c88c",
+      "started_at": "2026-09-16T04:46:58.881444+00:00",
+      "response_id": "f514e0b2-995f-4118-bcb9-5bc64dc46160",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 215,
+        "completion_tokens": 11,
+        "total_tokens": 226,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 215
+      },
+      "raw_output": "{\"intent\": \"check_refund_policy\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "check_refund_policy",
+      "latency_ms": 906
+    },
+    {
+      "id": "84a2c82cf8cf991841b23d0d764883a61665af190d4035f5966ca62fa7f803aa",
+      "question": "help me to check in what cases can i ask for refunds",
+      "expected": "check_refund_policy",
+      "correct": true,
+      "request_sha256": "59554d2fc965e85f7c138a59d3c3173fa80cdd9385cf65dfce2485f9cb2bafc9",
+      "started_at": "2026-09-16T04:46:59.778713+00:00",
+      "response_id": "9bc1b9c2-4daa-4885-ba6c-f458de78d29b",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 214,
+        "completion_tokens": 11,
+        "total_tokens": 225,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 214
+      },
+      "raw_output": "{\"intent\": \"check_refund_policy\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "check_refund_policy",
+      "latency_ms": 828
+    },
+    {
+      "id": "5782e659f09703612d90d97f210ae9fdf55662c349336caec5512ee65d5de1f2",
+      "question": "in which cases can i request a reimbursement",
+      "expected": "check_refund_policy",
+      "correct": true,
+      "request_sha256": "0ccb033c22127725c438d0ad051bec816a61e32cc48d8a7ccc29272a4591fa26",
+      "started_at": "2026-09-16T04:47:00.605638+00:00",
+      "response_id": "50534845-e82b-4fff-a84b-6834dd324d54",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 209,
+        "completion_tokens": 11,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 209
+      },
+      "raw_output": "{\"intent\": \"check_refund_policy\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "check_refund_policy",
+      "latency_ms": 610
+    },
+    {
+      "id": "a18899c7d19a266bd4c5a7aae09bef61958f0a978b768657d403843038e8d940",
+      "question": "assistance checking inn which cases can i ask for a refund",
+      "expected": "check_refund_policy",
+      "correct": true,
+      "request_sha256": "10f28bff0785f0ba3ca1b12d859162268718971d72ed14a6d64c0ccf890ca93b",
+      "started_at": "2026-09-16T04:47:01.228287+00:00",
+      "response_id": "a14d3b04-b941-4279-b8b8-b071e5a1eb9f",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 213,
+        "completion_tokens": 11,
+        "total_tokens": 224,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 213
+      },
+      "raw_output": "{\"intent\": \"check_refund_policy\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "check_refund_policy",
+      "latency_ms": 843
+    },
+    {
+      "id": "c995d24226d2e5daaabc536e61af8408398826d4fdf3cea07df6a82623972f45",
+      "question": "I expect a compensation of $3",
+      "expected": "track_refund",
+      "correct": false,
+      "request_sha256": "4d63c41916765aa1104a8a7d7a489b38204c19be884f5cb09c10975fe7d13861",
+      "started_at": "2026-09-16T04:47:02.067428+00:00",
+      "response_id": "fec9c405-af67-4ec2-9e88-0e0d86c60450",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 208,
+        "completion_tokens": 8,
+        "total_tokens": 216,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 208
+      },
+      "raw_output": "{\"intent\": \"complaint\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "complaint",
+      "latency_ms": 891
+    },
+    {
+      "id": "31cb7c702703198f8c71f4835daff64bf48a45ea1ec109ca1ac39aeba3f96176",
+      "question": "I am waiting for a refund of 160 dollars",
+      "expected": "track_refund",
+      "correct": true,
+      "request_sha256": "cbe4bc7060a517a75de280a3b37c94b724c9f64a216f9da3d66539f9f4136f66",
+      "started_at": "2026-09-16T04:47:02.953448+00:00",
+      "response_id": "791a3de2-f5b8-4b8a-9f3d-ad10fe587cb0",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 211,
+        "completion_tokens": 9,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 211
+      },
+      "raw_output": "{\"intent\": \"track_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_refund",
+      "latency_ms": 969
+    },
+    {
+      "id": "f62109ea660f6a4eae2df7477743176afb8269dbe14547a95d7fe3d536c989b5",
+      "question": "I expect a refund of 1499 dollars",
+      "expected": "track_refund",
+      "correct": false,
+      "request_sha256": "f9e3a50fc4a569eb7291d8ef64aa603b9429a5a7c36f21b0e319045f9f0c02bc",
+      "started_at": "2026-09-16T04:47:03.925663+00:00",
+      "response_id": "e64cf11b-0ef4-473e-b1a8-e5b33ee6adea",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 210,
+        "completion_tokens": 9,
+        "total_tokens": 219,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 210
+      },
+      "raw_output": "{\"intent\": \"get_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "get_refund",
+      "latency_ms": 875
+    },
+    {
+      "id": "c661056195b35d9faf58b5ee95503a5c7e4bee83ee43ebb419b3aa122693a4cd",
+      "question": "I'm waiting for a reimbursement of 1499 dollars",
+      "expected": "track_refund",
+      "correct": true,
+      "request_sha256": "c1ff9a059e2cab611c89f57e5f951b277b3243f196bb9e2ecac6bf4a6156f83f",
+      "started_at": "2026-09-16T04:47:04.796968+00:00",
+      "response_id": "a6d2a93e-c8da-4d9b-9efd-fce714d86cce",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 212,
+        "completion_tokens": 9,
+        "total_tokens": 221,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 212
+      },
+      "raw_output": "{\"intent\": \"track_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_refund",
+      "latency_ms": 719
+    },
+    {
+      "id": "f7e793ce5175580942e9bb7d1b9851830cc7d3e4fc654eb9bc79fdfd83a9717e",
+      "question": "I am waiting for a reimbursement of $1499",
+      "expected": "track_refund",
+      "correct": true,
+      "request_sha256": "683a9d7592e047ff10e5876af9f059daab1a049157473b7b286b8cd9a96731f7",
+      "started_at": "2026-09-16T04:47:05.513931+00:00",
+      "response_id": "6b941125-22d7-40d0-bbde-5b89c69f38bf",
+      "model": "deepseek-flash",
+      "usage": {
+        "prompt_tokens": 211,
+        "completion_tokens": 9,
+        "total_tokens": 220,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 211
+      },
+      "raw_output": "{\"intent\": \"track_refund\"}",
+      "finish_reason": "stop",
+      "valid": true,
+      "prediction": "track_refund",
+      "latency_ms": 718
+    }
+  ],
+  "metrics": {
+    "attempted": 30,
+    "responses": 30,
+    "correct": 28,
+    "accuracy": 0.9333333333333333,
+    "per_class": {
+      "cancel_order": {
+        "n": 5,
+        "correct": 5
+      },
+      "track_order": {
+        "n": 5,
+        "correct": 5
+      },
+      "delivery_period": {
+        "n": 5,
+        "correct": 5
+      },
+      "get_refund": {
+        "n": 5,
+        "correct": 5
+      },
+      "check_refund_policy": {
+        "n": 5,
+        "correct": 5
+      },
+      "track_refund": {
+        "n": 5,
+        "correct": 3
+      }
+    },
+    "confusion": {
+      "cancel_order": {
+        "cancel_order": 5
+      },
+      "track_order": {
+        "track_order": 5
+      },
+      "delivery_period": {
+        "delivery_period": 5
+      },
+      "get_refund": {
+        "get_refund": 5
+      },
+      "check_refund_policy": {
+        "check_refund_policy": 5
+      },
+      "track_refund": {
+        "complaint": 1,
+        "track_refund": 3,
+        "get_refund": 1
+      }
+    },
+    "usage": {
+      "prompt_tokens": 6339,
+      "completion_tokens": 274,
+      "total_tokens": 6613,
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 6339
+    },
+    "mean_latency_ms": 768.2
+  }
+}

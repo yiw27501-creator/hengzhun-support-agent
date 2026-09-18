@@ -1,0 +1,17 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>衡准 · 质量运营</title><link rel="stylesheet" href="/console.css">
+<header><strong>衡准 <span>售后 Agent 工作空间</span></strong><a href="/lab">任务实验台</a><a href="/knowledge">知识管理</a><a href="/quality" aria-current="page">质量运营</a></header><main>
+<div class="eyebrow">Quality</div><h1>每一次失败，都留下改进依据。</h1>
+<p>只录入脱敏或合成内容。发布/回退是本地审批记录，不会部署代码。回测为零费用工程测试，不代表模型效果达标。</p><p id="status" role="status"></p>
+<section class="panel"><h2>1. 收集失败案例</h2><form id="collect">
+<label>标题<input name="title" required maxlength="2000"></label>
+<label>预期行为<textarea name="expected" required maxlength="2000"></textarea></label>
+<label>实际行为<textarea name="actual" required maxlength="2000"></textarea></label>
+<label>证据（任务 ID / 报告路径，不填密钥）<input name="evidence" required maxlength="2000"></label>
+<label>来源<select name="source"><option value="synthetic">合成案例</option><option value="public_dataset">公开数据</option><option value="local_trace">本机轨迹</option></select></label><button>保存案例</button></form></section>
+<section class="panel"><h2>2. 选择案例并处理</h2><button id="refresh">刷新</button><select id="cases"></select><pre id="detail"></pre>
+<form id="triage"><h3>归因与优先级</h3><select name="cause"><option value="data">数据/标签</option><option value="knowledge">知识缺失/失效</option><option value="retrieval">检索</option><option value="prompt">Prompt/模型</option><option value="tool">工具</option><option value="authorization">授权</option><option value="ux">交互</option></select><select name="priority"><option>P1</option><option>P0</option><option>P2</option></select><label><input type="checkbox" name="safety">涉及安全或越权（强制 P0）</label><label>负责人<input name="owner" required></label><label>归因证据与优先级理由<textarea name="rationale" required></textarea></label><button>确认归因</button></form>
+<section id="model-eval"><h3>模型评测准入</h3><p class="hint">模型、数据或检索相关变更必须在登记修复前冻结案例。结果由人工导入，系统重算分数并校验门槛，不独立验证供应商记录真伪。</p><label>固定案例 JSON<textarea id="protocol-json" placeholder='[{"id":"case-1","expected":"paused","safety":true}]'></textarea></label><button type="button" id="freeze">冻结评测案例</button><label>基线结果 JSON<textarea id="baseline-json" placeholder='[{"id":"case-1","prediction":"paused","response_id":"真实响应ID","model":"模型名","prompt_hash":"提示词哈希"}]'></textarea></label><label>候选结果 JSON<textarea id="candidate-json"></textarea></label><button type="button" id="evaluate">导入并校验评测</button><pre id="eval-result"></pre></section>
+<form id="fix"><h3>登记修复</h3><label>变更引用（文件/提交/版本）<input name="change_ref" required></label><label>修复假设与验证方式<textarea name="hypothesis" required></textarea></label><button>保存修复记录</button></form>
+<h3>3. 固定集回测</h3><p>在后端目录执行下列命令。数据库路径须与当前服务 --db 对应，后缀改为 .quality.db。网页不能提交任意命令。</p><pre id="command"></pre>
+<form id="decide"><h3>4. 记录发布 / 回退决定</h3><label>工程回测记录 ID<input name="run_id" required></label><label>模型评测记录 ID（模型相关变更必填）<input name="evaluation_id"></label><select name="decision"><option value="rollback">记录回退</option><option value="release">记录准予发布</option></select><label>针对本案例的验收证据<textarea name="acceptance_evidence" required></textarea></label><label>决策理由<textarea name="note" required></textarea></label><button>保存决策（不部署）</button></form></section>
+<section class="panel"><h2>最近回测记录</h2><pre id="runs"></pre></section></main><script src="/quality.js"></script></html>

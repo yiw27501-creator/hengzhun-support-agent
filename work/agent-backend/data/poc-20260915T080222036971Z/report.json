@@ -1,0 +1,703 @@
+{
+  "scope": "synthetic technical POC, not business validation",
+  "created_at": "2026-09-15T08:02:22.037985+00:00",
+  "environment": {
+    "python": "3.12.4",
+    "os": "Windows"
+  },
+  "retrieval": {
+    "method": "BM25-style Chinese-bigram lexical retrieval; no embeddings",
+    "corpus_hash": "b1014573d3a193ceb997d0858473fa0931f287017a39a41228850e082928ac1c",
+    "cases": 10,
+    "hit_at_3": 1.0,
+    "mrr_at_3": 0.95,
+    "records": [
+      {
+        "query": "客户说可以换商品，后台却标成不接受，意愿冲突怎么办？",
+        "expected": "consent",
+        "retrieved": [
+          "consent",
+          "refund",
+          "replacement"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "原话和结构化偏好不一致，需要核对哪个时间的意愿？",
+        "expected": "consent",
+        "retrieved": [
+          "consent",
+          "risk"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "替代品价格比实付金额贵，可以直接换货吗？",
+        "expected": "replacement",
+        "retrieved": [
+          "replacement",
+          "refund",
+          "consent"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "仓库库存数量为零，能自动给同意换货的客户退款吗？",
+        "expected": "replacement",
+        "retrieved": [
+          "replacement",
+          "refund",
+          "consent"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "退款金额的自动上限是多少？",
+        "expected": "refund",
+        "retrieved": [
+          "refund",
+          "replacement",
+          "consent"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "客户申请退款，能否超过实付金额？",
+        "expected": "refund",
+        "retrieved": [
+          "replacement",
+          "refund",
+          "consent"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 0.5
+      },
+      {
+        "query": "身份还没有验证，能够继续操作吗？",
+        "expected": "risk",
+        "retrieved": [
+          "risk",
+          "retry"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "支付状态未知，有人身安全风险，如何处置？",
+        "expected": "risk",
+        "retrieved": [
+          "risk",
+          "retry"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "工具调用超时，但订单可能成功了，如何查询回执？",
+        "expected": "retry",
+        "retrieved": [
+          "retry"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      },
+      {
+        "query": "再次收到同一退款请求，怎样避免重复执行并对账？",
+        "expected": "retry",
+        "retrieved": [
+          "retry",
+          "refund",
+          "consent"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank": 1.0
+      }
+    ]
+  },
+  "queue": {
+    "jobs": 60,
+    "workers": 4,
+    "planner": "rule-fixture-1",
+    "paid_api_calls": 0,
+    "elapsed_seconds": 1.187,
+    "done": 60,
+    "dead": 0,
+    "completed_tasks": 40,
+    "human_handoffs": 20,
+    "unique_executions": 40,
+    "expected_executions": 40,
+    "ledger_ok": true,
+    "jobs_per_second": 50.55,
+    "enqueue_to_done_p95_ms": 1255.51,
+    "passed": true,
+    "limitation": "Local SQLite rule-based worker test, not public HTTP load or LLM throughput; latency includes pre-start backlog creation."
+  },
+  "model": {
+    "attempted_calls": 3,
+    "max_calls": 3,
+    "passed": 2,
+    "completed_cases": 3,
+    "records": [
+      {
+        "query": "可以换同档商品 换货 库存 价格",
+        "retrieval_ids": [
+          "replacement",
+          "consent",
+          "risk"
+        ],
+        "retrieval": [
+          {
+            "id": "replacement",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "换货库存价格条件",
+            "text": "客户明确同意换货，库存新鲜且数量大于零，替代品价格不超过实付金额，才能进行沙箱换货。无库存不代表客户同意退款，缺货时应转人工。",
+            "score": 4.043511
+          },
+          {
+            "id": "consent",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "客户意愿与原话冲突",
+            "text": "客户原话和结构化偏好不一致时，不猜测授权，暂停转人工核对原始消息和时间，确认当前换货或退款意愿，保留纠正记录。",
+            "score": 0.87816
+          },
+          {
+            "id": "risk",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "身份支付安全红线",
+            "text": "身份未验证、人身安全风险、支付状态未知或未支付、库存信息过期时转人工。人工确认偏好不能绕过安全红线。",
+            "score": 0.566786
+          }
+        ],
+        "corpus_hash": "b1014573d3a193ceb997d0858473fa0931f287017a39a41228850e082928ac1c",
+        "prompt_sha256": "8b14ae5d54bd464d9005728d7659cc3bf2011eef1a36e57d0a8718fc88cee422",
+        "model_requested": "deepseek-flash",
+        "input": {
+          "payment": "paid",
+          "paid_minor": 10000,
+          "stock": 2,
+          "price_minor": 9000,
+          "fresh_stock": true,
+          "identity_verified": true,
+          "safety_risk": false,
+          "sku": "ALT-A",
+          "confirmed_intent": "replace",
+          "preference_conflict": false,
+          "human_confirmed": false,
+          "customer_text": "可以换同档商品",
+          "message_id": "message-normal-dedae6484617",
+          "message_at": "2026-09-15T08:02:24.884345+00:00",
+          "accept_substitute": true
+        },
+        "status": "response",
+        "model_returned": "deepseek-flash",
+        "response_id": "8fd3f58d-4a80-4c50-9529-a938cd89e7f3",
+        "usage": {
+          "prompt_tokens": 617,
+          "completion_tokens": 35,
+          "total_tokens": 652,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 617
+        },
+        "response": "{\"action\":\"replace\",\"amount_minor\":0,\"sku\":\"ALT-A\",\"reason\":\"客户已确认换货，库存充足且替代品价格不超过实付金额\"}",
+        "finish_reason": "stop",
+        "latency_ms": 984
+      },
+      {
+        "query": "可以换同档商品 客户意愿 原话冲突 换货 库存 价格",
+        "retrieval_ids": [
+          "consent",
+          "replacement",
+          "refund"
+        ],
+        "retrieval": [
+          {
+            "id": "consent",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "客户意愿与原话冲突",
+            "text": "客户原话和结构化偏好不一致时，不猜测授权，暂停转人工核对原始消息和时间，确认当前换货或退款意愿，保留纠正记录。",
+            "score": 9.612869
+          },
+          {
+            "id": "replacement",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "换货库存价格条件",
+            "text": "客户明确同意换货，库存新鲜且数量大于零，替代品价格不超过实付金额，才能进行沙箱换货。无库存不代表客户同意退款，缺货时应转人工。",
+            "score": 4.7671
+          },
+          {
+            "id": "refund",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "退款授权金额上限",
+            "text": "客户确认退款后，退款金额等于实付最小货币单位且大于零，自动退款上限20000。超过上限转人工，不允许由客户文本修改额度。",
+            "score": 0.742685
+          }
+        ],
+        "corpus_hash": "b1014573d3a193ceb997d0858473fa0931f287017a39a41228850e082928ac1c",
+        "prompt_sha256": "8b14ae5d54bd464d9005728d7659cc3bf2011eef1a36e57d0a8718fc88cee422",
+        "model_requested": "deepseek-flash",
+        "input": {
+          "payment": "paid",
+          "paid_minor": 10000,
+          "stock": 2,
+          "price_minor": 9000,
+          "fresh_stock": true,
+          "identity_verified": true,
+          "safety_risk": false,
+          "sku": "ALT-A",
+          "confirmed_intent": null,
+          "preference_conflict": true,
+          "human_confirmed": false,
+          "customer_text": "可以换同档商品",
+          "message_id": "message-conflict-41573c6679f0",
+          "message_at": "2026-09-15T08:02:25.887957+00:00",
+          "accept_substitute": false
+        },
+        "status": "response",
+        "model_returned": "deepseek-flash",
+        "response_id": "9bc3bae3-0419-4545-b17e-eed268550393",
+        "usage": {
+          "prompt_tokens": 625,
+          "completion_tokens": 40,
+          "total_tokens": 665,
+          "prompt_tokens_details": {
+            "cached_tokens": 128
+          },
+          "prompt_cache_hit_tokens": 128,
+          "prompt_cache_miss_tokens": 497
+        },
+        "response": "{\"action\": \"human\", \"amount_minor\": 0, \"sku\": \"\", \"reason\": \"客户原话与结构化偏好冲突且未人工确认，需转人工核对意愿\"}",
+        "finish_reason": "stop",
+        "latency_ms": 1078
+      },
+      {
+        "query": "可以换同档商品 换货 库存 价格",
+        "retrieval_ids": [
+          "replacement",
+          "consent",
+          "risk"
+        ],
+        "retrieval": [
+          {
+            "id": "replacement",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "换货库存价格条件",
+            "text": "客户明确同意换货，库存新鲜且数量大于零，替代品价格不超过实付金额，才能进行沙箱换货。无库存不代表客户同意退款，缺货时应转人工。",
+            "score": 4.043511
+          },
+          {
+            "id": "consent",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "客户意愿与原话冲突",
+            "text": "客户原话和结构化偏好不一致时，不猜测授权，暂停转人工核对原始消息和时间，确认当前换货或退款意愿，保留纠正记录。",
+            "score": 0.87816
+          },
+          {
+            "id": "risk",
+            "version": "1",
+            "tenant": "sandbox",
+            "active": true,
+            "title": "身份支付安全红线",
+            "text": "身份未验证、人身安全风险、支付状态未知或未支付、库存信息过期时转人工。人工确认偏好不能绕过安全红线。",
+            "score": 0.566786
+          }
+        ],
+        "corpus_hash": "b1014573d3a193ceb997d0858473fa0931f287017a39a41228850e082928ac1c",
+        "prompt_sha256": "8b14ae5d54bd464d9005728d7659cc3bf2011eef1a36e57d0a8718fc88cee422",
+        "model_requested": "deepseek-flash",
+        "input": {
+          "payment": "paid",
+          "paid_minor": 10000,
+          "stock": 2,
+          "price_minor": 9000,
+          "fresh_stock": true,
+          "identity_verified": true,
+          "safety_risk": false,
+          "sku": "ALT-A",
+          "confirmed_intent": "replace",
+          "preference_conflict": false,
+          "human_confirmed": false,
+          "customer_text": "可以换同档商品",
+          "message_id": "message-tool_failure-67cab99559ab",
+          "message_at": "2026-09-15T08:02:26.977320+00:00",
+          "accept_substitute": true
+        },
+        "status": "response",
+        "model_returned": "deepseek-flash",
+        "response_id": "4855351d-5c9c-453e-9fa3-a9e2ab399745",
+        "usage": {
+          "prompt_tokens": 620,
+          "completion_tokens": 35,
+          "total_tokens": 655,
+          "prompt_tokens_details": {
+            "cached_tokens": 128
+          },
+          "prompt_cache_hit_tokens": 128,
+          "prompt_cache_miss_tokens": 492
+        },
+        "response": "{\"action\": \"human\", \"amount_minor\": 0, \"sku\": \"\", \"reason\": \"换货需人工确认有效意愿，当前未人工确认\"}",
+        "finish_reason": "stop",
+        "latency_ms": 1000
+      }
+    ],
+    "outputs": [
+      {
+        "scenario": "normal",
+        "first_state": "COMPLETED",
+        "expected_state": "COMPLETED",
+        "passed": true,
+        "task": {
+          "id": "658f5a8c6d3344b8b4177e3cbb204c86",
+          "event_id": "event-normal-dedae6484617",
+          "order_id": "normal-dedae6484617",
+          "state": "COMPLETED",
+          "attempts": 1,
+          "plan": {
+            "action": "replace",
+            "amount_minor": 0,
+            "sku": "ALT-A",
+            "reason": "客户已确认换货，库存充足且替代品价格不超过实付金额"
+          },
+          "created_at": "2026-09-15T08:02:24.891406+00:00",
+          "order": {
+            "id": "normal-dedae6484617",
+            "facts": {
+              "payment": "paid",
+              "paid_minor": 10000,
+              "stock": 1,
+              "price_minor": 9000,
+              "fresh_stock": true,
+              "identity_verified": true,
+              "safety_risk": false,
+              "sku": "ALT-A",
+              "confirmed_intent": "replace",
+              "preference_conflict": false,
+              "human_confirmed": false,
+              "customer_text": "可以换同档商品",
+              "message_id": "message-normal-dedae6484617",
+              "message_at": "2026-09-15T08:02:24.884345+00:00",
+              "accept_substitute": true
+            },
+            "status": "replaced",
+            "fail_mode": "none"
+          },
+          "trace": [
+            {
+              "seq": 1,
+              "task_id": "658f5a8c6d3344b8b4177e3cbb204c86",
+              "at": "2026-09-15T08:02:24.891406+00:00",
+              "event": "event.received",
+              "details": {
+                "order_id": "normal-dedae6484617",
+                "environment": "sandbox"
+              }
+            },
+            {
+              "seq": 2,
+              "task_id": "658f5a8c6d3344b8b4177e3cbb204c86",
+              "at": "2026-09-15T08:02:24.898076+00:00",
+              "event": "context.loaded",
+              "details": {
+                "facts": {
+                  "payment": "paid",
+                  "paid_minor": 10000,
+                  "stock": 2,
+                  "price_minor": 9000,
+                  "fresh_stock": true,
+                  "identity_verified": true,
+                  "safety_risk": false,
+                  "sku": "ALT-A",
+                  "confirmed_intent": "replace",
+                  "preference_conflict": false,
+                  "human_confirmed": false,
+                  "customer_text": "可以换同档商品",
+                  "message_id": "message-normal-dedae6484617",
+                  "message_at": "2026-09-15T08:02:24.884345+00:00",
+                  "accept_substitute": true
+                },
+                "policy_version": "sandbox-policy-1"
+              }
+            },
+            {
+              "seq": 3,
+              "task_id": "658f5a8c6d3344b8b4177e3cbb204c86",
+              "at": "2026-09-15T08:02:25.879944+00:00",
+              "event": "planner.completed",
+              "details": {
+                "planner_version": "rag-deepseek-poc-1",
+                "prompt_sha256": null,
+                "latency_ms": 984,
+                "valid": true
+              }
+            },
+            {
+              "seq": 4,
+              "task_id": "658f5a8c6d3344b8b4177e3cbb204c86",
+              "at": "2026-09-15T08:02:25.880974+00:00",
+              "event": "tool.executed",
+              "details": {
+                "tool": "sandbox.replace",
+                "receipt": {
+                  "id": "610d1add6b8940ecbe887a63bbc8cb9b",
+                  "order_id": "normal-dedae6484617",
+                  "action": "replace",
+                  "amount_minor": 0,
+                  "sku": "ALT-A",
+                  "status": "replaced",
+                  "sandbox": true
+                }
+              }
+            },
+            {
+              "seq": 5,
+              "task_id": "658f5a8c6d3344b8b4177e3cbb204c86",
+              "at": "2026-09-15T08:02:25.880974+00:00",
+              "event": "result.verified",
+              "details": {
+                "verified": true,
+                "observed_status": "replaced"
+              }
+            }
+          ],
+          "receipt": {
+            "id": "610d1add6b8940ecbe887a63bbc8cb9b",
+            "order_id": "normal-dedae6484617",
+            "action": "replace",
+            "amount_minor": 0,
+            "sku": "ALT-A",
+            "status": "replaced",
+            "sandbox": true
+          }
+        }
+      },
+      {
+        "scenario": "conflict",
+        "first_state": "WAITING_HUMAN",
+        "expected_state": "WAITING_HUMAN",
+        "passed": true,
+        "task": {
+          "id": "e8c4557a68bd47adbe70cb1009ad1f26",
+          "event_id": "event-conflict-41573c6679f0",
+          "order_id": "conflict-41573c6679f0",
+          "state": "WAITING_HUMAN",
+          "attempts": 1,
+          "plan": {
+            "action": "human",
+            "amount_minor": 0,
+            "sku": "",
+            "reason": "客户原话与结构化偏好冲突且未人工确认，需转人工核对意愿"
+          },
+          "created_at": "2026-09-15T08:02:25.893285+00:00",
+          "order": {
+            "id": "conflict-41573c6679f0",
+            "facts": {
+              "payment": "paid",
+              "paid_minor": 10000,
+              "stock": 2,
+              "price_minor": 9000,
+              "fresh_stock": true,
+              "identity_verified": true,
+              "safety_risk": false,
+              "sku": "ALT-A",
+              "confirmed_intent": null,
+              "preference_conflict": true,
+              "human_confirmed": false,
+              "customer_text": "可以换同档商品",
+              "message_id": "message-conflict-41573c6679f0",
+              "message_at": "2026-09-15T08:02:25.887957+00:00",
+              "accept_substitute": false
+            },
+            "status": "open",
+            "fail_mode": "none"
+          },
+          "trace": [
+            {
+              "seq": 6,
+              "task_id": "e8c4557a68bd47adbe70cb1009ad1f26",
+              "at": "2026-09-15T08:02:25.894283+00:00",
+              "event": "event.received",
+              "details": {
+                "order_id": "conflict-41573c6679f0",
+                "environment": "sandbox"
+              }
+            },
+            {
+              "seq": 7,
+              "task_id": "e8c4557a68bd47adbe70cb1009ad1f26",
+              "at": "2026-09-15T08:02:25.900266+00:00",
+              "event": "context.loaded",
+              "details": {
+                "facts": {
+                  "payment": "paid",
+                  "paid_minor": 10000,
+                  "stock": 2,
+                  "price_minor": 9000,
+                  "fresh_stock": true,
+                  "identity_verified": true,
+                  "safety_risk": false,
+                  "sku": "ALT-A",
+                  "confirmed_intent": null,
+                  "preference_conflict": true,
+                  "human_confirmed": false,
+                  "customer_text": "可以换同档商品",
+                  "message_id": "message-conflict-41573c6679f0",
+                  "message_at": "2026-09-15T08:02:25.887957+00:00",
+                  "accept_substitute": false
+                },
+                "policy_version": "sandbox-policy-1"
+              }
+            },
+            {
+              "seq": 8,
+              "task_id": "e8c4557a68bd47adbe70cb1009ad1f26",
+              "at": "2026-09-15T08:02:26.970509+00:00",
+              "event": "planner.completed",
+              "details": {
+                "planner_version": "rag-deepseek-poc-1",
+                "prompt_sha256": null,
+                "latency_ms": 1078,
+                "valid": true
+              }
+            },
+            {
+              "seq": 9,
+              "task_id": "e8c4557a68bd47adbe70cb1009ad1f26",
+              "at": "2026-09-15T08:02:26.970509+00:00",
+              "event": "human.requested",
+              "details": {
+                "reason": "客户原话与结构化偏好冲突且未人工确认，需转人工核对意愿"
+              }
+            }
+          ],
+          "receipt": null
+        }
+      },
+      {
+        "scenario": "tool_failure",
+        "first_state": "WAITING_HUMAN",
+        "expected_state": "COMPLETED",
+        "passed": false,
+        "task": {
+          "id": "0f464ae4752c40179d0a6c8603cf66cc",
+          "event_id": "event-tool_failure-67cab99559ab",
+          "order_id": "tool_failure-67cab99559ab",
+          "state": "WAITING_HUMAN",
+          "attempts": 1,
+          "plan": {
+            "action": "human",
+            "amount_minor": 0,
+            "sku": "",
+            "reason": "换货需人工确认有效意愿，当前未人工确认"
+          },
+          "created_at": "2026-09-15T08:02:26.982694+00:00",
+          "order": {
+            "id": "tool_failure-67cab99559ab",
+            "facts": {
+              "payment": "paid",
+              "paid_minor": 10000,
+              "stock": 2,
+              "price_minor": 9000,
+              "fresh_stock": true,
+              "identity_verified": true,
+              "safety_risk": false,
+              "sku": "ALT-A",
+              "confirmed_intent": "replace",
+              "preference_conflict": false,
+              "human_confirmed": false,
+              "customer_text": "可以换同档商品",
+              "message_id": "message-tool_failure-67cab99559ab",
+              "message_at": "2026-09-15T08:02:26.977320+00:00",
+              "accept_substitute": true
+            },
+            "status": "open",
+            "fail_mode": "timeout_after_commit"
+          },
+          "trace": [
+            {
+              "seq": 10,
+              "task_id": "0f464ae4752c40179d0a6c8603cf66cc",
+              "at": "2026-09-15T08:02:26.983221+00:00",
+              "event": "event.received",
+              "details": {
+                "order_id": "tool_failure-67cab99559ab",
+                "environment": "sandbox"
+              }
+            },
+            {
+              "seq": 11,
+              "task_id": "0f464ae4752c40179d0a6c8603cf66cc",
+              "at": "2026-09-15T08:02:26.990877+00:00",
+              "event": "context.loaded",
+              "details": {
+                "facts": {
+                  "payment": "paid",
+                  "paid_minor": 10000,
+                  "stock": 2,
+                  "price_minor": 9000,
+                  "fresh_stock": true,
+                  "identity_verified": true,
+                  "safety_risk": false,
+                  "sku": "ALT-A",
+                  "confirmed_intent": "replace",
+                  "preference_conflict": false,
+                  "human_confirmed": false,
+                  "customer_text": "可以换同档商品",
+                  "message_id": "message-tool_failure-67cab99559ab",
+                  "message_at": "2026-09-15T08:02:26.977320+00:00",
+                  "accept_substitute": true
+                },
+                "policy_version": "sandbox-policy-1"
+              }
+            },
+            {
+              "seq": 12,
+              "task_id": "0f464ae4752c40179d0a6c8603cf66cc",
+              "at": "2026-09-15T08:02:27.994626+00:00",
+              "event": "planner.completed",
+              "details": {
+                "planner_version": "rag-deepseek-poc-1",
+                "prompt_sha256": null,
+                "latency_ms": 1000,
+                "valid": true
+              }
+            },
+            {
+              "seq": 13,
+              "task_id": "0f464ae4752c40179d0a6c8603cf66cc",
+              "at": "2026-09-15T08:02:27.995123+00:00",
+              "event": "human.requested",
+              "details": {
+                "reason": "换货需人工确认有效意愿，当前未人工确认"
+              }
+            }
+          ],
+          "receipt": null
+        }
+      }
+    ],
+    "limitation": "Three synthetic integration smoke cases; not independent model-quality evaluation or proof of RAG uplift."
+  }
+}

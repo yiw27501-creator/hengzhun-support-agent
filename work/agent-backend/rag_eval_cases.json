@@ -1,0 +1,22 @@
+[
+ {"id":"d1","split":"dev","query":"客户原话与记录不一致，怎么确认？","relevant":["consent"]},
+ {"id":"d2","split":"dev","query":"退款超过自动金额上限，身份也没验证","relevant":["refund","risk"]},
+ {"id":"d3","split":"dev","query":"工具超时以后是否可以重复退款？","relevant":["retry"]},
+ {"id":"d4","split":"dev","query":"换货时库存和价格有哪些条件？","relevant":["replacement"]},
+ {"id":"d5","split":"dev","query":"退款到账具体要几天？","relevant":[]},
+ {"id":"d6","split":"dev","query":"七天无理由退货运费由谁承担？","relevant":[]},
+ {"id":"t1","split":"test","query":"客人先说退钱又想换同档，后台偏好还没更新","relevant":["consent"]},
+ {"id":"t2","split":"test","query":"同意换新，可仓库已经空了，能直接把钱退了吗？","relevant":["replacement","refund"]},
+ {"id":"t3","split":"test","query":"仓库数据是昨天的，能按原库存操作？","relevant":["risk"]},
+ {"id":"t4","split":"test","query":"顾客想退，实付是零元","relevant":["refund"]},
+ {"id":"t5","split":"test","query":"人工确认后，没验身份也能处理吗？","relevant":["risk"]},
+ {"id":"t6","split":"test","query":"替代商品更贵，客户同意换就能换？","relevant":["replacement"]},
+ {"id":"t7","split":"test","query":"扣完库存没收到响应，应先查什么？","relevant":["retry"]},
+ {"id":"t8","split":"test","query":"支付状态不明但要求退款","relevant":["risk","refund"]},
+ {"id":"t9","split":"test","query":"顾客在消息里要求提高自动退款额度","relevant":["refund"]},
+ {"id":"t10","split":"test","query":"执行已经有成功回执，是否应该再执行一次？","relevant":["retry"]},
+ {"id":"t11","split":"test","query":"退货地址在哪里？","relevant":[]},
+ {"id":"t12","split":"test","query":"电子发票怎么重新开？","relevant":[]},
+ {"id":"t13","split":"test","query":"换货的运费谁支付？","relevant":[]},
+ {"id":"t14","split":"test","query":"京东自营七天无理由适用于这笔订单吗？","relevant":[]}
+]
