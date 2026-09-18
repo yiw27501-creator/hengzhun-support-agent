@@ -1,0 +1,139 @@
+{
+  "dataset_id": "workflow-safety-v1",
+  "fixture_sha256": "85b537f13c9e8872408db625d3f4a0ea8507bfc1d13941e390c7d1eb1e70a033",
+  "source": "project-authored synthetic scenarios",
+  "model_mode": "rule planner plus deterministic router double",
+  "total": 9,
+  "passed": 9,
+  "cases": [
+    {
+      "id": "withdraw_before_worker",
+      "expected": {
+        "state": "WAITING_HUMAN",
+        "receipt": false,
+        "authorization_active": false
+      },
+      "actual": {
+        "state": "WAITING_HUMAN",
+        "receipt": false,
+        "authorization_active": false
+      },
+      "passed": true
+    },
+    {
+      "id": "invalid_model_tool",
+      "expected": {
+        "route_status": "FAILED",
+        "receipt": false,
+        "authorization_active": false
+      },
+      "actual": {
+        "route_status": "FAILED",
+        "receipt": false,
+        "authorization_active": false
+      },
+      "passed": true
+    },
+    {
+      "id": "automatic_replace",
+      "expected": {
+        "state": "COMPLETED",
+        "action": "replace",
+        "receipt_count": 1
+      },
+      "actual": {
+        "state": "COMPLETED",
+        "action": "replace",
+        "receipt_count": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "automatic_refund",
+      "expected": {
+        "state": "COMPLETED",
+        "action": "refund",
+        "receipt_count": 1
+      },
+      "actual": {
+        "state": "COMPLETED",
+        "action": "refund",
+        "receipt_count": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "timeout_reconciliation",
+      "expected": {
+        "state": "COMPLETED",
+        "action": "replace",
+        "receipt_count": 1,
+        "reconciled": true
+      },
+      "actual": {
+        "state": "COMPLETED",
+        "action": "replace",
+        "receipt_count": 1,
+        "reconciled": true
+      },
+      "passed": true
+    },
+    {
+      "id": "conflict_information_only",
+      "expected": {
+        "state": "WAITING_HUMAN",
+        "receipt": false,
+        "authorization_active": false
+      },
+      "actual": {
+        "state": "WAITING_HUMAN",
+        "receipt": false,
+        "authorization_active": false
+      },
+      "passed": true
+    },
+    {
+      "id": "identity_requires_two_steps",
+      "expected": {
+        "premature_refund_blocked": true,
+        "action_after_confirmation": "refund",
+        "receipt_count": 1
+      },
+      "actual": {
+        "premature_refund_blocked": true,
+        "action_after_confirmation": "refund",
+        "receipt_count": 1
+      },
+      "passed": true
+    },
+    {
+      "id": "stock_refresh_requires_confirmation",
+      "expected": {
+        "stock_fresh": true,
+        "receipt_before_confirmation": false,
+        "action_after_confirmation": "replace"
+      },
+      "actual": {
+        "stock_fresh": true,
+        "receipt_before_confirmation": false,
+        "action_after_confirmation": "replace"
+      },
+      "passed": true
+    },
+    {
+      "id": "return_requires_inspection",
+      "expected": {
+        "receipt_before_inspection": false,
+        "action_after_inspection": "refund",
+        "receipt_count": 1
+      },
+      "actual": {
+        "receipt_before_inspection": false,
+        "action_after_inspection": "refund",
+        "receipt_count": 1
+      },
+      "passed": true
+    }
+  ],
+  "interpretation": "Synthetic engineering regression only; not model accuracy, merchant success rate, or ROI."
+}

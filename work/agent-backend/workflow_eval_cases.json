@@ -1,0 +1,16 @@
+{
+  "dataset_id": "workflow-safety-v1",
+  "source": "project-authored synthetic scenarios",
+  "model_mode": "rule planner plus deterministic router double",
+  "cases": [
+    {"id": "withdraw_before_worker", "expected": {"state": "WAITING_HUMAN", "receipt": false, "authorization_active": false}},
+    {"id": "invalid_model_tool", "expected": {"route_status": "FAILED", "receipt": false, "authorization_active": false}},
+    {"id": "automatic_replace", "expected": {"state": "COMPLETED", "action": "replace", "receipt_count": 1}},
+    {"id": "automatic_refund", "expected": {"state": "COMPLETED", "action": "refund", "receipt_count": 1}},
+    {"id": "timeout_reconciliation", "expected": {"state": "COMPLETED", "action": "replace", "receipt_count": 1, "reconciled": true}},
+    {"id": "conflict_information_only", "expected": {"state": "WAITING_HUMAN", "receipt": false, "authorization_active": false}},
+    {"id": "identity_requires_two_steps", "expected": {"premature_refund_blocked": true, "action_after_confirmation": "refund", "receipt_count": 1}},
+    {"id": "stock_refresh_requires_confirmation", "expected": {"stock_fresh": true, "receipt_before_confirmation": false, "action_after_confirmation": "replace"}},
+    {"id": "return_requires_inspection", "expected": {"receipt_before_inspection": false, "action_after_inspection": "refund", "receipt_count": 1}}
+  ]
+}

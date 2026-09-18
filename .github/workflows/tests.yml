@@ -15,3 +15,6 @@ jobs:
       - name: Run backend tests
         working-directory: work/agent-backend
         run: python -m unittest discover -q
+      - name: Run frozen synthetic workflow evaluation
+        working-directory: work/agent-backend
+        run: python evaluate_workflow_baseline.py
